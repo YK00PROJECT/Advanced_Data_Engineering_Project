@@ -1,0 +1,1676 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "%sh\nwget -q https://github.com/tofighi/BigData/blob/main/datasets/cars/cars.zip?raw=true -O cars.zip\nls -lah cars.zip",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-27T00:08:53+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sh",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "-rw-r--r-- 1 zeppelin zeppelin 89M Feb 27 00:08 cars.zip\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708987720569_1077024155",
+      "id": "paragraph_1708987720569_1077024155",
+      "dateCreated": "2024-02-26T22:48:40+0000",
+      "dateStarted": "2024-02-27T00:08:53+0000",
+      "dateFinished": "2024-02-27T00:08:54+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:124313"
+    },
+    {
+      "text": "%sh\nunzip cars.zip && rm cars.zip\nhadoop fs -mkdir /user/assignment\nhadoop fs -put cars.csv /user/assignment\nhadoop fs -ls -h /user/assignment\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-27T00:08:00+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sh",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "  End-of-central-directory signature not found.  Either this fiArchive:  cars.zip\nle is not\n  a zipfile, or it constitutes one disk of a multi-part archive.  In the\n  latter case the central directory and zipfile comment will be found on\n  the last disk(s) of this archive.\nunzip:  cannot find zipfile directory in one of cars.zip or\n        cars.zip.zip, and cannot find cars.zip.ZIP, period.\nmkdir: `/user/assignment': File exists\nput: `/user/assignment/cars.csv': File exists\nFound 2 items\n-rw-r--r--   2 zeppelin hadoop    400.0 M 2024-02-26 22:50 /user/assignment/cars.csv\ndrwxr-xr-x   - zeppelin hadoop          0 2024-02-26 22:38 /user/assignment/new_folder\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708987879453_628241174",
+      "id": "paragraph_1708987879453_628241174",
+      "dateCreated": "2024-02-26T22:51:19+0000",
+      "dateStarted": "2024-02-27T00:08:00+0000",
+      "dateFinished": "2024-02-27T00:08:10+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:124314"
+    },
+    {
+      "text": "%sh\nhadoop fs -cat /user/assignment/cars.csv | head -n 5",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-27T00:08:23+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "maker,model,mileage,manufacture_year,engine_displacement,engine_power,body_type,color_slug,stk_year,transmission,door_count,seat_count,fuel_type,date_created,date_last_seen,price_eur\r\nford,galaxy,151000,2011,2000,103,,,None,man,5,7,diesel,2015-11-14 18:10:06.8383cat: Un1a9b+l0e0 ,t2o0 1w6r-i0t1e- 2t7o  2o0u:t4p0u:t1 5s.t4r6e3a6m1.+\n00,10584.75\r\nskoda,octavia,143476,2012,2000,81,,,None,man,5,5,diesel,2015-11-14 18:10:06.853411+00,2016-01-27 20:40:15.46361+00,8882.31\r\nbmw,,97676,2010,1995,85,,,None,man,5,5,diesel,2015-11-14 18:10:06.861792+00,2016-01-27 20:40:15.46361+00,12065.06\r\nskoda,fabia,111970,2004,1200,47,,,None,man,5,5,gasoline,2015-11-14 18:10:06.872313+00,2016-01-27 20:40:15.46361+00,2960.77\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708987827907_22860200",
+      "id": "paragraph_1708987827907_22860200",
+      "dateCreated": "2024-02-26T22:50:27+0000",
+      "dateStarted": "2024-02-27T00:08:23+0000",
+      "dateFinished": "2024-02-27T00:08:27+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:124315"
+    },
+    {
+      "text": "%sql\nSHOW TABLES;\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-27T00:08:59+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "tab_name": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "tab_name\ncars\nusedcars_new\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708987838919_801533080",
+      "id": "paragraph_1708987838919_801533080",
+      "dateCreated": "2024-02-26T22:50:38+0000",
+      "dateStarted": "2024-02-27T00:08:58+0000",
+      "dateFinished": "2024-02-27T00:08:58+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:124316"
+    },
+    {
+      "text": "%sh\nfile -i cars.csv",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-27T00:15:13+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sh",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "cars.csv: application/csv; charset=us-ascii\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708992801925_1407125057",
+      "id": "paragraph_1708992801925_1407125057",
+      "dateCreated": "2024-02-27T00:13:21+0000",
+      "dateStarted": "2024-02-27T00:15:13+0000",
+      "dateFinished": "2024-02-27T00:15:13+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:124317"
+    },
+    {
+      "text": "%sh\niconv -f us-ascii -t utf-8 cars.csv -o cars_utf8.csv",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-27T00:16:51+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sh",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708993006512_192454757",
+      "id": "paragraph_1708993006512_192454757",
+      "dateCreated": "2024-02-27T00:16:46+0000",
+      "dateStarted": "2024-02-27T00:16:52+0000",
+      "dateFinished": "2024-02-27T00:16:53+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:124318"
+    },
+    {
+      "text": "%sh\ncars_utf8.csv",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-27T00:18:06+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "bash: line 1: cars_utf8.csv: command not found\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "ExitValue: 127"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708993083860_947545590",
+      "id": "paragraph_1708993083860_947545590",
+      "dateCreated": "2024-02-27T00:18:03+0000",
+      "dateStarted": "2024-02-27T00:18:07+0000",
+      "dateFinished": "2024-02-27T00:18:07+0000",
+      "status": "ERROR",
+      "$$hashKey": "object:124319"
+    },
+    {
+      "text": "%sh\nfile -i cars_utf8.csv",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-27T00:21:05+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sh",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "cars_utf8.csv: application/csv; charset=us-ascii\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708993260384_1690361132",
+      "id": "paragraph_1708993260384_1690361132",
+      "dateCreated": "2024-02-27T00:21:00+0000",
+      "dateStarted": "2024-02-27T00:21:05+0000",
+      "dateFinished": "2024-02-27T00:21:05+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:124320"
+    },
+    {
+      "text": "%sh\niconv -f us-ascii -t utf-8 cars_utf8.csv > cars_utf8_converted.csv",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-27T00:22:29+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sh",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708993345773_217586865",
+      "id": "paragraph_1708993345773_217586865",
+      "dateCreated": "2024-02-27T00:22:25+0000",
+      "dateStarted": "2024-02-27T00:22:29+0000",
+      "dateFinished": "2024-02-27T00:22:31+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:124321"
+    },
+    {
+      "text": "CREATE TABLE IF NOT EXISTS used_cars (\n    maker STRING,\n    model STRING,\n    mileage INT,\n    manufacture_year INT,\n    engine_displacement INT,\n    engine_power INT,\n    body_type STRING,\n    color_slug STRING,\n    stk_year STRING,\n    transmission STRING,\n    door_count STRING,\n    seat_count INT,\n    fuel_type STRING,\n    date_created TIMESTAMP,\n    date_last_seen TIMESTAMP,\n    price_eur FLOAT\n)\nROW FORMAT DELIMITED\nFIELDS TERMINATED BY ','\nSTORED AS TEXTFILE;\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-27T00:26:26+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : -1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708993422958_928891439",
+      "id": "paragraph_1708993422958_928891439",
+      "dateCreated": "2024-02-27T00:23:42+0000",
+      "dateStarted": "2024-02-27T00:26:26+0000",
+      "dateFinished": "2024-02-27T00:26:27+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:124322"
+    },
+    {
+      "text": "%sql\nLOAD DATA INPATH '/user/assignment/cars.csv' INTO TABLE used_cars;",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-27T00:29:07+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : -1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708993664726_78824507",
+      "id": "paragraph_1708993664726_78824507",
+      "dateCreated": "2024-02-27T00:27:44+0000",
+      "dateStarted": "2024-02-27T00:29:07+0000",
+      "dateFinished": "2024-02-27T00:29:08+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:124323"
+    },
+    {
+      "text": "SELECT * FROM used_cars LIMIT 10;",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-27T00:29:18+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "maker": "string",
+                      "model": "string",
+                      "mileage": "string",
+                      "manufacture_year": "string",
+                      "engine_displacement": "string",
+                      "engine_power": "string",
+                      "body_type": "string",
+                      "color_slug": "string",
+                      "stk_year": "string",
+                      "transmission": "string",
+                      "door_count": "string",
+                      "seat_count": "string",
+                      "fuel_type": "string",
+                      "date_created": "string",
+                      "date_last_seen": "string",
+                      "price_eur": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "maker\tmodel\tmileage\tmanufacture_year\tengine_displacement\tengine_power\tbody_type\tcolor_slug\tstk_year\ttransmission\tdoor_count\tseat_count\tfuel_type\tdate_created\tdate_last_seen\tprice_eur\nmaker\tmodel\tnull\tnull\tnull\tnull\tbody_type\tcolor_slug\tstk_year\ttransmission\tdoor_count\tnull\tfuel_type\tnull\tnull\tnull\nford\tgalaxy\t151000\t2011\t2000\t103\t\t\tNone\tman\t5\t7\tdiesel\tnull\tnull\t10584.75\nskoda\toctavia\t143476\t2012\t2000\t81\t\t\tNone\tman\t5\t5\tdiesel\tnull\tnull\t8882.31\nbmw\t\t97676\t2010\t1995\t85\t\t\tNone\tman\t5\t5\tdiesel\tnull\tnull\t12065.06\nskoda\tfabia\t111970\t2004\t1200\t47\t\t\tNone\tman\t5\t5\tgasoline\tnull\tnull\t2960.77\nskoda\tfabia\t128886\t2004\t1200\t47\t\t\tNone\tman\t5\t5\tgasoline\tnull\tnull\t2738.71\nskoda\tfabia\t140932\t2003\t1200\t40\t\t\tNone\tman\t5\t5\tgasoline\tnull\tnull\t1628.42\nskoda\tfabia\t167220\t2001\t1400\t74\t\t\tNone\tman\t5\t5\tgasoline\tnull\tnull\t2072.54\nbmw\t\t148500\t2009\t2000\t130\t\t\tNone\tauto\t5\t5\tdiesel\tnull\tnull\t10547.74\nskoda\toctavia\t105389\t2003\t1900\t81\t\t\tNone\tman\t5\t5\tdiesel\tnull\tnull\t4293.12\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708993593574_762424915",
+      "id": "paragraph_1708993593574_762424915",
+      "dateCreated": "2024-02-27T00:26:33+0000",
+      "dateStarted": "2024-02-27T00:29:18+0000",
+      "dateFinished": "2024-02-27T00:29:18+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:124324"
+    },
+    {
+      "text": "%hive\nCREATE TABLE IF NOT EXISTS used_cars (\n    maker STRING,\n    model STRING,\n    mileage INT,\n    manufacture_year INT,\n    engine_displacement INT,\n    engine_power INT,\n    body_type STRING,\n    color_slug STRING,\n    stk_year INT,\n    transmission STRING,\n    door_count INT,\n    seat_count INT,\n    fuel_type STRING,\n    date_created TIMESTAMP,\n    date_last_seen TIMESTAMP,\n    price_eur DOUBLE\n)\nLOCATION '/user/assignment/cars.csv';\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-27T00:30:33+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : -1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708987906615_2126298462",
+      "id": "paragraph_1708987906615_2126298462",
+      "dateCreated": "2024-02-26T22:51:46+0000",
+      "dateStarted": "2024-02-27T00:30:33+0000",
+      "dateFinished": "2024-02-27T00:30:34+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:124325"
+    },
+    {
+      "text": "%hive\r\nSELECT * FROM used_cars LIMIT 10;\r\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-27T00:31:11+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "maker": "string",
+                      "model": "string",
+                      "mileage": "string",
+                      "manufacture_year": "string",
+                      "engine_displacement": "string",
+                      "engine_power": "string",
+                      "body_type": "string",
+                      "color_slug": "string",
+                      "stk_year": "string",
+                      "transmission": "string",
+                      "door_count": "string",
+                      "seat_count": "string",
+                      "fuel_type": "string",
+                      "date_created": "string",
+                      "date_last_seen": "string",
+                      "price_eur": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          },
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "maker": "string",
+                      "model": "string",
+                      "mileage": "string",
+                      "manufacture_year": "string",
+                      "engine_displacement": "string",
+                      "engine_power": "string",
+                      "body_type": "string",
+                      "color_slug": "string",
+                      "stk_year": "string",
+                      "transmission": "string",
+                      "door_count": "string",
+                      "seat_count": "string",
+                      "fuel_type": "string",
+                      "date_created": "string",
+                      "date_last_seen": "string",
+                      "price_eur": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "maker\tmodel\tmileage\tmanufacture_year\tengine_displacement\tengine_power\tbody_type\tcolor_slug\tstk_year\ttransmission\tdoor_count\tseat_count\tfuel_type\tdate_created\tdate_last_seen\tprice_eur\nmaker\tmodel\tnull\tnull\tnull\tnull\tbody_type\tcolor_slug\tstk_year\ttransmission\tdoor_count\tnull\tfuel_type\tnull\tnull\tnull\nford\tgalaxy\t151000\t2011\t2000\t103\t\t\tNone\tman\t5\t7\tdiesel\tnull\tnull\t10584.75\nskoda\toctavia\t143476\t2012\t2000\t81\t\t\tNone\tman\t5\t5\tdiesel\tnull\tnull\t8882.31\nbmw\t\t97676\t2010\t1995\t85\t\t\tNone\tman\t5\t5\tdiesel\tnull\tnull\t12065.06\nskoda\tfabia\t111970\t2004\t1200\t47\t\t\tNone\tman\t5\t5\tgasoline\tnull\tnull\t2960.77\nskoda\tfabia\t128886\t2004\t1200\t47\t\t\tNone\tman\t5\t5\tgasoline\tnull\tnull\t2738.71\nskoda\tfabia\t140932\t2003\t1200\t40\t\t\tNone\tman\t5\t5\tgasoline\tnull\tnull\t1628.42\nskoda\tfabia\t167220\t2001\t1400\t74\t\t\tNone\tman\t5\t5\tgasoline\tnull\tnull\t2072.54\nbmw\t\t148500\t2009\t2000\t130\t\t\tNone\tauto\t5\t5\tdiesel\tnull\tnull\t10547.74\nskoda\toctavia\t105389\t2003\t1900\t81\t\t\tNone\tman\t5\t5\tdiesel\tnull\tnull\t4293.12\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708987939762_807396611",
+      "id": "paragraph_1708987939762_807396611",
+      "dateCreated": "2024-02-26T22:52:19+0000",
+      "dateStarted": "2024-02-27T00:31:11+0000",
+      "dateFinished": "2024-02-27T00:31:11+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:124326"
+    },
+    {
+      "text": "%hive\nSELECT count(*) FROM used_cars",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-27T00:46:49+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "_c0": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "INFO  : Compiling command(queryId=hive_20240227004619_34f22e70-2714-497e-bf49-e057548218df): \nSELECT count(*) FROM used_cars\nINFO  : Concurrency mode is disabled, not creating a lock manager\nINFO  : Semantic Analysis Completed (retrial = false)\nINFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:_c0, type:bigint, comment:null)], properties:null)\nINFO  : Completed compiling command(queryId=hive_20240227004619_34f22e70-2714-497e-bf49-e057548218df); Time taken: 0.103 seconds\nINFO  : Concurrency mode is disabled, not creating a lock manager\nINFO  : Executing command(queryId=hive_20240227004619_34f22e70-2714-497e-bf49-e057548218df): \nSELECT count(*) FROM used_cars\nINFO  : Query ID = hive_20240227004619_34f22e70-2714-497e-bf49-e057548218df\nINFO  : Total jobs = 1\nINFO  : Launching Job 1 out of 1\nINFO  : Starting task [Stage-1:MAPRED] in serial mode\nINFO  : Subscribed to counters: [] for queryId: hive_20240227004619_34f22e70-2714-497e-bf49-e057548218df\nINFO  : Tez session hasn't been created yet. Opening session\n"
+          },
+          {
+            "type": "TABLE",
+            "data": "_c0\n3552913\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708994765224_942038278",
+      "id": "paragraph_1708994765224_942038278",
+      "dateCreated": "2024-02-27T00:46:05+0000",
+      "dateStarted": "2024-02-27T00:46:19+0000",
+      "dateFinished": "2024-02-27T00:46:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:124327"
+    },
+    {
+      "text": "%hive\n-- Create a new table with the desired schema, excluding the columns to be dropped\nCREATE TABLE IF NOT EXISTS used_cars_new (\n    maker STRING,\n    model STRING,\n    mileage INT,\n    manufacture_year INT,\n    engine_displacement INT,\n    engine_power INT,\n    stk_year STRING,\n    transmission STRING,\n    door_count STRING,\n    seat_count INT,\n    fuel_type STRING,\n    date_created TIMESTAMP,\n    date_last_seen TIMESTAMP,\n    price_eur FLOAT\n);\n\n-- Insert data from the original table into the new table, excluding the columns to be dropped\nINSERT INTO TABLE used_cars_new\nSELECT \n    maker,\n    model,\n    mileage,\n    manufacture_year,\n    engine_displacement,\n    engine_power,\n    stk_year,\n    transmission,\n    door_count,\n    seat_count,\n    fuel_type,\n    date_created,\n    date_last_seen,\n    price_eur\nFROM used_cars;\n\n-- Drop the original table\nDROP TABLE IF EXISTS used_cars;\n\n-- Rename the new table to the original table name\nALTER TABLE used_cars_new RENAME TO used_cars;\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-27T01:00:44+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : -1\nINFO  : Compiling command(queryId=hive_20240227010045_b14e2636-c860-4ee2-82a2-2a23485e5cd7): \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nINSERT INTO TABLE used_cars_new\nSELECT \n    maker,\n    model,\n    mileage,\n    manufacture_year,\n    engine_displacement,\n    engine_power,\n    stk_year,\n    transmission,\n    door_count,\n    seat_count,\n    fuel_type,\n    date_created,\n    date_last_seen,\n    price_eur\nFROM used_cars\nINFO  : Concurrency mode is disabled, not creating a lock manager\nINFO  : Semantic Analysis Completed (retrial = false)\nINFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:maker, type:string, comment:null), FieldSchema(name:model, type:string, comment:null), FieldSchema(name:mileage, type:int, comment:null), FieldSchema(name:manufacture_year, type:int, comment:null), FieldSchema(name:engine_displacement, type:int, comment:null), FieldSchema(name:engine_power, type:int, comment:null), FieldSchema(name:stk_year, type:string, comment:null), FieldSchema(name:transmission, type:string, comment:null), FieldSchema(name:door_count, type:string, comment:null), FieldSchema(name:seat_count, type:int, comment:null), FieldSchema(name:fuel_type, type:string, comment:null), FieldSchema(name:date_created, type:timestamp, comment:null), FieldSchema(name:date_last_seen, type:timestamp, comment:null), FieldSchema(name:price_eur, type:float, comment:null)], properties:null)\nINFO  : Completed compiling command(queryId=hive_20240227010045_b14e2636-c860-4ee2-82a2-2a23485e5cd7); Time taken: 0.224 seconds\nINFO  : Concurrency mode is disabled, not creating a lock manager\nINFO  : Executing command(queryId=hive_20240227010045_b14e2636-c860-4ee2-82a2-2a23485e5cd7): \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nINSERT INTO TABLE used_cars_new\nSELECT \n    maker,\n    model,\n    mileage,\n    manufacture_year,\n    engine_displacement,\n    engine_power,\n    stk_year,\n    transmission,\n    door_count,\n    seat_count,\n    fuel_type,\n    date_created,\n    date_last_seen,\n    price_eur\nFROM used_cars\nINFO  : Query ID = hive_20240227010045_b14e2636-c860-4ee2-82a2-2a23485e5cd7\nINFO  : Total jobs = 1\nINFO  : Launching Job 1 out of 1\nINFO  : Starting task [Stage-1:MAPRED] in serial mode\nINFO  : Subscribed to counters: [] for queryId: hive_20240227010045_b14e2636-c860-4ee2-82a2-2a23485e5cd7\nINFO  : Tez session hasn't been created yet. Opening session\n\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : -1\n\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : -1\n\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : -1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708988433748_769242601",
+      "id": "paragraph_1708988433748_769242601",
+      "dateCreated": "2024-02-26T23:00:33+0000",
+      "dateStarted": "2024-02-27T01:00:44+0000",
+      "dateFinished": "2024-02-27T01:02:09+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:124328"
+    },
+    {
+      "text": "%hive\nSELECT * FROM used_cars;",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-27T01:02:23+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "maker": "string",
+                      "model": "string",
+                      "mileage": "string",
+                      "manufacture_year": "string",
+                      "engine_displacement": "string",
+                      "engine_power": "string",
+                      "stk_year": "string",
+                      "transmission": "string",
+                      "door_count": "string",
+                      "seat_count": "string",
+                      "fuel_type": "string",
+                      "date_created": "string",
+                      "date_last_seen": "string",
+                      "price_eur": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          },
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "_c0": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "maker\tmodel\tmileage\tmanufacture_year\tengine_displacement\tengine_power\tstk_year\ttransmission\tdoor_count\tseat_count\tfuel_type\tdate_created\tdate_last_seen\tprice_eur\ntoyota\tcorolla\t181000\t2002\t1598\t81\t\tman\t5\t5\t\tnull\tnull\t2183.57\nskoda\trapid\t19976\t2015\t1197\t63\t\tman\t5\t5\t\tnull\tnull\t10695.78\nford\tmondeo\t139000\t2013\t2179\t147\t\tauto\t5\t5\t\tnull\tnull\t13656.55\nskoda\trapid\t10928\t2015\t1197\t63\t\tman\t5\t5\t\tnull\tnull\t10362.32\nbmw\t\t14660\tnull\t1499\t100\t\tauto\t5\t5\t\tnull\tnull\t22168.76\nvolkswagen\tpassat\t133824\t2006\t2000\t125\t\tauto\t5\t5\t\tnull\tnull\t7994.08\nskoda\toctavia\t189962\t2007\t1900\t74\t\tman\t5\t5\t\tnull\tnull\t5255.37\nopel\tinsignia\t176819\t2013\t2000\t96\t\tauto\t5\t5\t\tnull\tnull\t9622.5\ntoyota\taygo\t95250\t2008\t1000\t50\t\tman\t5\t4\t\tnull\tnull\t2923.76\nbmw\t\t15300\tnull\t1499\t100\t\tauto\t5\t5\t\tnull\tnull\t2923.76\nskoda\toctavia\t22099\t2015\t1197\t77\t\tman\t5\t5\t\tnull\tnull\t15692.08\nskoda\tfabia\t137000\t2006\t1390\t59\t\tman\t5\t5\t\tnull\tnull\t15692.08\nskoda\tfelicia\t74380\t1998\t1289\t50\t\tman\t5\t5\t\tnull\tnull\t1813.47\nbmw\tx5\t103400\t2011\t2993\t180\t\tauto\t5\t5\t\tnull\tnull\t1813.47\ncitroen\tc3\t100415\t2005\t1360\t54\t\tman\t5\t5\t\tnull\tnull\t1813.47\nskoda\trapid\t22784\t2015\t1197\t81\t\tman\t5\t5\t\tnull\tnull\t11435.97\nskoda\toctavia\t18989\t2015\t1968\t110\t\tman\t5\t5\t\tnull\tnull\t22168.76\nskoda\tfabia\t179170\t2007\t1198\t40\t\tman\t5\t5\t\tnull\tnull\t2220.58\nskoda\toctavia\t205000\t2001\t1896\t81\t\tman\t5\t5\t\tnull\tnull\t2216.88\nskoda\toctavia\t19459\t2015\t1395\t110\t\tman\t5\t5\t\tnull\tnull\t2216.88\nskoda\toctavia\t41189\t2015\t1968\t110\t\tman\t5\t5\t\tnull\tnull\t2216.88\nvolkswagen\tpolo\t153224\tnull\t999\t37\t\tman\t3\t5\t\tnull\tnull\t1813.47\nvolkswagen\tpassat\t54395\t2015\t1598\t88\t\tman\t5\t5\t\tnull\tnull\t1813.47\nsuzuki\tsx4\t147000\tnull\t1586\t79\t\tman\t5\t5\t\tnull\tnull\t5884.53\nskoda\toctavia\t192374\t2012\t1968\t103\t\tauto\t5\t5\t\tnull\tnull\t11658.03\nskoda\toctavia\t149000\t2003\t1390\t55\t\tman\t5\t5\t\tnull\tnull\t2516.65\nchrysler\tle-baron-cabrio\t170000\t1992\t1758\tnull\t\tauto\t2\t4\t\tnull\tnull\t740.19\nskoda\toctavia\t293000\t2000\t1984\t85\t\tman\t5\t5\t\tnull\tnull\t2035.53\nmini\tone\t142000\t2005\t1364\t55\t\tman\t3\t4\t\tnull\tnull\t2035.53\nskoda\tfabia\t119793\t2008\t1390\t63\t\tman\t5\t5\t\tnull\tnull\t2035.53\ntoyota\tcorolla-verso\t137565\t2002\t1598\t81\t\tman\t5\t5\t\tnull\tnull\t2957.07\nskoda\trapid\t14430\t2015\t1197\t63\t\tman\t5\t5\t\tnull\tnull\t10325.68\nfiat\tidea\t134000\t2004\t1368\t70\t\tman\t5\t5\t\tnull\tnull\t2398.22\nvolkswagen\tgolf\t198000\tnull\t1598\t77\t\tman\t5\t5\t\tnull\tnull\t2398.22\nskoda\toctavia\t20914\t2015\t1395\t110\t\tauto\t5\t5\t\tnull\tnull\t17646.19\nskoda\tyeti\t20590\t2015\t1998\t81\t\tman\t5\t5\t\tnull\tnull\t17646.19\nford\ttourneo-connect\t166000\t2004\t1753\t66\t\tman\t5\t5\t\tnull\tnull\t17646.19\nrenault\tclio\t204944\t2004\t1149\t43\t\tman\t5\t5\t\tnull\tnull\t1221.32\nskoda\toctavia\t21751\t2015\t1395\t103\t\tman\t5\t5\t\tnull\tnull\t15503.33\nmazda\t6\t134000\t2004\t1798\t88\t\tman\t5\t5\t\tnull\tnull\t15503.33\nskoda\toctavia\t195908\t2000\t1896\t81\t\tman\t5\t5\t\tnull\tnull\t3145.45\nskoda\tsuperb\t165975\t2011\t1968\t125\t\tauto\t5\t5\t\tnull\tnull\t13656.55\nvolkswagen\tbora\t176634\t2000\t1390\t55\t\tman\t4\t5\t\tnull\tnull\t2216.88\nskoda\troomster\t173000\tnull\t1422\t51\t\tman\t5\t5\t\tnull\tnull\t4034.05\n\t\t52676\t2010\t1596\t72\t\tman\t5\t5\t\tnull\tnull\t4034.05\nskoda\tfabia\t143156\t2007\t1198\t51\t\tman\t5\t5\t\tnull\tnull\t4034.05\nkia\tceed\t86164\t2008\t1396\t80\t\tman\t5\t5\t\tnull\tnull\t4626.2\nskoda\tfabia\t175901\t2008\t1390\t63\t\tman\t5\t5\t\tnull\tnull\t4626.2\npeugeot\t206\t190948\tnull\t1560\t80\t\tman\t5\t5\t\tnull\tnull\t2586.97\nmercedes-benz\tvito\t82012\tnull\t2143\t100\t\tauto\t4\t9\t\tnull\tnull\t2586.97\nkia\tcarens\t11500\t2014\t1685\t100\t\tman\t\tnull\t\tnull\tnull\t2586.97\nkia\tsoul\t40000\t2014\t1591\t97\t\tman\t\tnull\t\tnull\tnull\t2586.97\nrenault\tmegane\t166782\tnull\t1598\t79\t\tman\t5\t5\t\tnull\tnull\t921.54\nvolkswagen\tcorrado\t1\t1989\t1781\t118\t\t\t\tnull\t\tnull\tnull\t3663.95\nrenault\tclio\t142725\t2005\t1598\t65\t\tman\t5\t5\t\tnull\tnull\t3660.25\nford\tmondeo\t221000\tnull\t1998\t96\t\tauto\t5\t5\t\tnull\tnull\t1702.44\nskoda\tfabia\t119000\t2010\t1422\t59\t\tman\t5\t5\t\tnull\tnull\t1702.44\nskoda\trapid\t18695\t2016\t1395\t92\t\tauto\t5\t5\t\tnull\tnull\t17945.97\nvolkswagen\tcc\t47000\t2014\t1968\t103\t\tauto\t\t4\t\tnull\tnull\t17945.97\nbmw\t\t197000\t2001\t2171\t125\t\tman\t2\t4\t\tnull\tnull\t17945.97\nskoda\tfabia\t121555\t2013\t1598\t55\t\tman\t5\t5\t\tnull\tnull\t6991.12\nhonda\tcivic\t112500\tnull\t1493\t66\t\t\t5\t5\t\tnull\tnull\t2030.98\nhyundai\tgetz\t119400\tnull\t1341\t62\t\t\t5\t5\t\tnull\tnull\t2956.22\nbmw\t\t115383\t2010\t2993\t180\t\tman\t5\t5\t\tnull\tnull\t18467.8\nskoda\toctavia\t227603\t2008\t1968\t103\t\tauto\t5\t5\t\tnull\tnull\t7364.91\nrenault\tlaguna\t299200\tnull\t1870\t79\t\t\t5\t5\t\tnull\tnull\t7364.91\npeugeot\t508\t125100\tnull\t1997\t120\t\t\t5\t5\t\tnull\tnull\t7364.91\nkia\tcarnival\t210380\t2004\t2902\t106\t\tman\t5\t5\t\tnull\tnull\t1998.52\nchrysler\tpt-cruiser\t98332\tnull\t2429\t105\t\tman\t5\t4\t\tnull\tnull\t1998.52\nopel\tinsignia\t166500\t2010\t1956\t96\t\tman\t5\t5\t\tnull\tnull\t6365.66\nford\tka\t144131\t2005\t1299\t51\t\tman\t3\t4\t\tnull\tnull\t6365.66\nvolkswagen\ttouran\t9399\t2015\t1598\t77\t\tman\t5\tnull\t\tnull\tnull\t18504.44\nford\tmustang\t27000\t2015\t3700\t224\t\tauto\t2\t4\t\tnull\tnull\t32531.46\nvolkswagen\tgolf\t158000\t2002\t1598\t77\t\tman\t5\t5\t\tnull\tnull\t32531.46\nbmw\t\t119600\t2009\t1995\t105\t\tman\t5\t5\t\tnull\tnull\t10695.78\nskoda\tfabia\t103848\t2008\t1198\t44\t\tman\t5\t5\t\tnull\tnull\t4925.98\ncitroen\tberlingo\t436000\t2005\t1868\t51\t\tman\t3\t5\t\tnull\tnull\t703.18\nvolkswagen\tgolf\t166874\t2007\t1896\t77\t\tman\t5\t5\t\tnull\tnull\t6254.63\naudi\ta3\t1000\t2016\t1598\t81\t\tman\t5\t5\t\tnull\tnull\t23649.15\naudi\ta3\t82897\t2008\t1798\t118\t\tman\t5\t5\t\tnull\tnull\t8138.42\nskoda\toctavia\t59900\t2014\t1598\t77\t\tman\t5\t5\t\tnull\tnull\t13989.64\nskoda\toctavia\t18000\t2015\t1598\t66\t\tman\t5\t5\t\tnull\tnull\t13989.64\nskoda\trapid\t19000\t2015\t1197\t63\t\tman\t5\t5\t\tnull\tnull\t9955.59\nmaserati\t\t0\t2016\t2987\t202\t\t\t5\t5\t\tnull\tnull\t9955.59\nseat\tcordoba\t193629\t1999\t1598\t55\t\tman\t5\t5\t\tnull\tnull\t1106.59\nvolkswagen\ttouareg\t204000\tnull\t2967\t176\t\tauto\t5\t5\t\tnull\tnull\t11435.97\nkia\tcarens\t74400\t2014\t1685\t100\t\tman\t5\t7\t\tnull\tnull\t11435.97\njeep\twrangler\t188000\t1996\t3960\t130\t\tman\t\tnull\t\tnull\tnull\t6661.73\nskoda\tfabia\t97190\t2001\t1390\t55\t\tman\t5\t5\t\tnull\tnull\t2701.7\nskoda\toctavia\t195100\t2012\t1968\t103\t\tman\t5\t5\t\tnull\tnull\t9063.66\nvolvo\txc70\t246000\t2011\t2400\t151\t\tauto\t5\t5\t\tnull\tnull\t9063.66\nrenault\tmegane\t106010\t2011\t1598\t81\t\tman\t5\t5\t\tnull\tnull\t6843.08\nsuzuki\twagon-r\t170846\t2003\t1298\t56\t\tman\t5\t5\t\tnull\tnull\t1480.38\nrenault\tespace\t164620\t2008\t1998\t100\t\tman\t5\t7\t\tnull\tnull\t1480.38\nvolkswagen\tpassat\t193565\t2004\t1896\t96\t\tman\t4\t5\t\tnull\tnull\t4067.36\nsuzuki\tvitara\t2\t2016\t1373\t88\t\tman\t5\t5\t\tnull\tnull\t4067.36\nford\tfocus\t137000\t2011\t1560\t80\t\tman\t5\t5\t\tnull\tnull\t6106.59\nrover\tdiscovery\t213788\t2000\t2495\t101\t\tman\t5\t7\t\tnull\tnull\t3697.26\npeugeot\t307\t255000\t2004\t1997\t79\t\tman\t5\t5\t\tnull\tnull\t1665.43\nrenault\tespace\t164620\t2008\t1998\t100\t\tman\t5\t7\t\tnull\tnull\t1665.43\npeugeot\t308\t76000\t2009\t1560\t66\t\tman\t5\t5\t\tnull\tnull\t1665.43\nrenault\tespace\t175709\tnull\t1870\t85\t\tman\t5\t5\t\tnull\tnull\t3293.86\nvolkswagen\ttouran\t118000\t2009\t1595\t75\t\tman\t5\t5\t\tnull\tnull\t7364.91\npeugeot\tpartner\t268000\t2000\t1997\t66\t\tman\t5\t5\t\tnull\tnull\t7364.91\nrenault\tclio\t92000\t2009\t1461\t50\t\tman\t5\t5\t\tnull\tnull\t4774.24\nvolkswagen\tcaddy\t162778\t2007\t1984\t80\t\tman\t5\t5\t\tnull\tnull\t4774.24\nsuzuki\tswift\t2\t2016\t1242\t69\t\tman\t5\t5\t\tnull\tnull\t4774.24\nseat\tibiza\t160000\tnull\t1198\t47\t\tman\t5\t5\t\tnull\tnull\t4774.24\nhyundai\ti10\t32595\tnull\t1248\t63\t\tman\t5\t5\t\tnull\tnull\t4774.24\nopel\tastra\t65409\tnull\t1248\t70\t\tman\t5\t5\t\tnull\tnull\t4774.24\nmini\tcooper-s\t205000\tnull\t1598\t125\t\tman\t5\t4\t\tnull\tnull\t5329.39\nford\tfocus\t114968\tnull\t15961\t85\t\tman\t5\t5\t\tnull\tnull\t6994.82\nkia\tsportage\t196500\t2008\t1991\t110\t\tman\t5\t5\t\tnull\tnull\t6254.59\nskoda\toctavia\t132247\t2009\t1390\t90\t\tman\t5\t5\t\tnull\tnull\t6254.59\nnissan\tqashqai\t119800\t2010\t1997\t104\t\tauto\t5\t5\t\tnull\tnull\t11287.93\nvolkswagen\ttransporter\t318774\tnull\t2461\t75\t\t\t4\t5\t\tnull\tnull\t4807.55\nskoda\tfabia\t210014\tnull\t1896\t77\t\t\t5\t5\t\tnull\tnull\t3663.95\nrenault\tkangoo\t162343\tnull\t1498\t66\t\tman\t5\t5\t\tnull\tnull\t6291.27\nnissan\tjuke\t1000\t2016\t1197\t85\t\tman\t5\t5\t\tnull\tnull\t6291.27\nsuzuki\tswift\t150\t2016\t1586\t100\t\tman\t5\t5\t\tnull\tnull\t13874.91\nskoda\tsuperb\t522355\t2002\t1896\t96\t\tman\t4\t5\t\tnull\tnull\t2405.63\ncitroen\tc3\t141003\t2008\t1398\t50\t\tman\t5\t5\t\tnull\tnull\t2405.63\nnissan\tqashqai\t1000\t2016\t1197\t85\t\tman\t5\t5\t\tnull\tnull\t2405.63\ncitroen\tds3\t15000\t2014\t1598\t152\t\tman\t3\t5\t\tnull\tnull\t18467.8\nskoda\tsuperb\t263292\t2012\t1598\t77\t\tman\t5\t5\t\tnull\tnull\t18467.8\nskoda\tsuperb\t293325\t2012\t1598\t77\t\tman\t5\t5\t\tnull\tnull\t18467.8\nskoda\toctavia\t39000\t2014\t1395\t81\t\tman\t5\t5\t\tnull\tnull\t18467.8\nmazda\t626\t243000\t1998\t1840\t66\t\tman\t4\t5\t\tnull\tnull\t1295.34\nford\tfocus\t134457\t2013\t1560\t70\t\tman\t5\t5\t\tnull\tnull\t1295.34\nmercedes-benz\t\t209000\t2000\t2148\t85\t\tauto\t4\t5\t\tnull\tnull\t1295.34\nsuzuki\tvitara\t2\t2016\t1598\t88\t\tman\t5\t5\t\tnull\tnull\t1295.34\nmercedes-benz\t\t202595\tnull\t1598\t75\t\t\t5\t5\t\tnull\tnull\t1295.34\npeugeot\t308\t164139\tnull\t1560\t80\t\tman\t5\t5\t\tnull\tnull\t5107.33\nhyundai\tterracan\t164800\t2003\t2902\t110\t\tman\t5\t5\t\tnull\tnull\t5107.33\nskoda\toctavia\t215000\tnull\t1896\t74\t\tman\t5\t5\t\tnull\tnull\t2923.76\nskoda\trapid\t14680\t2015\t1197\t81\t\tman\t5\t5\t\tnull\tnull\t13138.42\npeugeot\t206\t217664\tnull\t1398\t50\t\tman\t5\t5\t\tnull\tnull\t13138.42\nvolkswagen\ttouran\t202950\t2010\t1390\t110\t\tauto\t5\tnull\t\tnull\tnull\t6254.63\nopel\tzafira\t146185\tnull\t1796\t103\t\tauto\t5\t7\t\tnull\tnull\t6254.63\nskoda\toctavia\t19203\t2015\t1968\t110\t\tman\t5\t5\t\tnull\tnull\t6254.63\npeugeot\t508\t1\t2016\t1997\t132\t\t\t5\t5\t\tnull\tnull\t6254.63\nskoda\toctavia\t105537\t2010\t1390\t90\t\tman\t5\t5\t\tnull\tnull\t8327.17\nvolkswagen\tgolf\t203000\t2009\t1968\t103\t\tman\t5\t5\t\tnull\tnull\t7768.32\nopel\tzafira\t145000\tnull\t1910\t88\t\tman\t5\t7\t\tnull\tnull\t5033.31\ncitroen\txsara\t199000\t1999\t1761\t81\t\tman\t3\t5\t\tnull\tnull\t736.49\nskoda\toctavia\t310000\tnull\t1896\t66\t\tman\t5\t5\t\tnull\tnull\t2035.53\nhyundai\ti30\t52656\tnull\t1591\t88\t\tman\t5\t5\t\tnull\tnull\t2035.53\nford\tfocus\t76604\t2002\t1800\t85\t\tman\t5\t5\t\tnull\tnull\t2701.7\nford\ts-max\t91441\t2006\t1800\t92\t\tman\t5\t5\t\tnull\tnull\t6217.62\nskoda\tfabia\t70620\t2005\t1200\t47\t\tman\t5\t5\t\tnull\tnull\t2812.73\naudi\ta4\t309000\t2005\t1896\t85\t\tman\t5\t5\t\tnull\tnull\t2812.73\nvolkswagen\tpassat\t245845\t2009\t1968\t81\t\tman\t5\t5\t\tnull\tnull\t6809.77\nvolkswagen\tsharan\t218511\t2007\t2000\t103\t\tman\t5\t6\t\tnull\tnull\t7401.92\nskoda\toctavia\t17762\t2015\t1400\t110\t\tman\t5\t5\t\tnull\tnull\t16280.53\nskoda\toctavia\t157127\t2007\t2000\t103\t\tman\t5\t5\t\tnull\tnull\t6217.62\ntoyota\tcorolla-verso\t103700\tnull\t2231\t100\t\tman\t5\t7\t\tnull\tnull\t8882.31\naudi\ta4\t87949\t2008\t2000\t105\t\tman\t4\t5\t\tnull\tnull\t9992.6\nvolkswagen\tgolf\t152765\t2004\t1896\t74\t\tman\t5\t5\t\tnull\tnull\t9992.6\npeugeot\t307\t427500\tnull\t1587\t80\t\t\t5\t7\t\tnull\tnull\t9992.6\ncitroen\tc4-cactus\t12690\t2015\t1560\t68\t\tauto\t4\t5\t\tnull\tnull\t9992.6\nmazda\t3\t123760\t2004\t1600\t77\t\tman\t4\t5\t\tnull\tnull\t4071.06\nvolkswagen\tsharan\t143000\t2012\t2000\t103\t\tman\t5\t7\t\tnull\tnull\t4071.06\nskoda\tsuperb\t14570\t2015\t1968\t140\t\tauto\t5\t5\t\tnull\tnull\t4071.06\ncitroen\tc4-picasso\t180703\t2007\t2000\t100\t\tauto\t5\t7\t\tnull\tnull\t4996.3\nkia\tcarens\t24406\t2015\t1700\t100\t\tauto\t5\t7\t\tnull\tnull\t18504.81\ncitroen\tc4-cactus\t27045\t2015\t1560\t73\t\tman\t5\t5\t\tnull\tnull\t18504.81\nmercedes-benz\t\t178000\tnull\t3997\t225\t\tauto\t5\t5\t\tnull\tnull\t18504.81\nskoda\toctavia\t29906\t2015\t1984\t162\t\tman\t5\t5\t\tnull\tnull\t18504.81\npeugeot\t108\t7900\tnull\t1199\t60\t\tman\t5\t4\t\tnull\tnull\t8697.26\nopel\tastra\t80539\t2006\t1600\t77\t\tman\t5\t5\t\tnull\tnull\t3737.97\nrenault\tmegane\t209859\t1999\t1390\t70\t\tman\t5\t5\t\tnull\tnull\t887.86\nford\tmondeo\t138663\t2012\t2000\t103\t\tman\t5\t5\t\tnull\tnull\t10214.66\nford\tfiesta\t119716\tnull\t1242\t55\t\tman\t5\t5\t\tnull\tnull\t925.24\ntoyota\tyaris\t35995\t2011\t1000\t51\t\tman\t5\t5\t\tnull\tnull\t6661.73\naudi\ta3\t122000\t2013\t1968\t110\t\tman\t5\t5\t\tnull\tnull\t19059.96\ntoyota\tyaris\t176373\t2006\t1300\t64\t\tman\t5\t5\t\tnull\tnull\t3108.81\ncitroen\txsara-picasso\t218753\t2001\t1587\t70\t\tman\t5\t5\t\tnull\tnull\t3108.81\nskoda\tfabia\t119113\t2010\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t4774.24\nrenault\tmegane\t128040\t2004\t1400\t72\t\tman\t5\t5\t\tnull\tnull\t2183.57\nford\tfiesta\t198322\t2001\t1800\t55\t\tman\t5\t5\t\tnull\tnull\t1110.29\nvolvo\tv60\t172125\t2011\t2400\t151\t\tauto\t5\t5\t\tnull\tnull\t1110.29\nopel\tastra\t94145\t2001\t1598\t62\t\tauto\t3\t5\t\tnull\tnull\t1735.75\nskoda\tfabia\t223000\t2000\t1896\t74\t\tman\t5\t5\t\tnull\tnull\t1735.75\nskoda\toctavia\t110888\t2001\t1600\t55\t\tman\t5\t5\t\tnull\tnull\t2442.64\nvolkswagen\tpassat\t287313\t1998\t1900\t81\t\tman\t5\t5\t\tnull\tnull\t1850.48\naudi\ta6\t309609\t1998\t2400\t121\t\tauto\t5\t5\t\tnull\tnull\t1295.34\nford\tmondeo\t103049\t2012\t2000\t120\t\tman\t5\t5\t\tnull\tnull\t10214.66\nskoda\toctavia\t171530\tnull\t1968\t125\t\tman\t\t5\t\tnull\tnull\t9067.36\nskoda\tfabia\t137434\t2010\t1600\t55\t\tman\t5\t5\t\tnull\tnull\t4515.17\naudi\ta5\t130123\tnull\t1968\t130\t\tman\t2\t4\t\tnull\tnull\t4515.17\nbmw\t\t248276\tnull\t2993\t150\t\tauto\t5\t5\t\tnull\tnull\t4515.17\nopel\tantara\t177000\t2007\t1991\t110\t\tman\t5\t5\t\tnull\tnull\t4626.2\nvolkswagen\tgolf\t159447\t2012\t1600\t77\t\tman\t5\t5\t\tnull\tnull\t7438.93\nvolkswagen\tmultivan\t280000\t2005\t2461\t128\t\tman\t4\t9\t\tnull\tnull\t9622.5\nford\tmustang\t168000\t2010\t4009\t157\t\tauto\t2\t4\t\tnull\tnull\t16654.33\nkia\tcarens\t116182\tnull\t1991\t103\t\tman\t5\t7\t\tnull\tnull\t16654.33\nopel\tmeriva\t124933\t2003\t1598\t74\t\tman\t5\t5\t\tnull\tnull\t16654.33\nmercedes-benz\t\t126000\t2004\t2597\t125\t\tauto\t3\t4\t\tnull\tnull\t6846.78\npeugeot\t207\t165900\t2007\t1560\t80\t\tman\t5\t5\t\tnull\tnull\t3663.95\nford\tfocus\t209233\t2005\t1560\t80\t\tman\t5\t5\t\tnull\tnull\t2883.05\nopel\tcorsa\t172000\t2001\t973\t43\t\tman\t3\t5\t\tnull\tnull\t721.69\nvolkswagen\tnew-beetle\t283400\t2000\t1896\t66\t\tman\t3\t5\t\tnull\tnull\t721.69\naudi\ta6\t117000\t2014\t2974\t230\t\tauto\t4\t5\t\tnull\tnull\t721.69\nford\tmustang\t1\t2016\t5000\t324\t\tauto\t2\t4\t\tnull\tnull\t721.69\nskoda\tfabia\t31086\t2009\t1198\t44\t\tman\t5\t5\t\tnull\tnull\t4564.51\nford\tmustang\t1\t2016\t5000\t324\t\tauto\t2\t4\t\tnull\tnull\t4564.51\nvolkswagen\tpassat\t200000\t2004\t1781\t110\t\tman\t5\t5\t\tnull\tnull\t3219.84\nseat\tcordoba\t120000\tnull\t1390\t55\t\tman\t4\t5\t\tnull\tnull\t3219.84\nalfa-romeo\t156\t119000\t1999\t1970\t114\t\tman\t4\t5\t\tnull\tnull\t740.19\nskoda\tfabia\t42000\t2015\t999\t55\t\tman\t5\t5\t\tnull\tnull\t740.19\nhyundai\t\t76800\t2005\t1086\t43\t\tman\t5\t4\t\tnull\tnull\t1846.78\nskoda\toctavia\t24955\t2011\t1390\t90\t\tman\t5\t5\t\tnull\tnull\t9807.55\nopel\tcorsa\t149410\t2010\t1248\t55\t\t\t\tnull\t\tnull\tnull\t2405.63\npeugeot\t308\t1\t2016\t1199\t81\t\tman\t5\t5\t\tnull\tnull\t2405.63\nskoda\toctavia\t22806\t2014\t1800\t132\t\tauto\t5\t5\t\tnull\tnull\t24056.25\nskoda\toctavia\t21509\t2014\t1984\t162\t\tauto\t5\t5\t\tnull\tnull\t21461.88\nskoda\tyeti\t51631\t2012\t1400\t90\t\tman\t5\t5\t\tnull\tnull\t11917.1\nmercedes-benz\t\t59971\t2013\t3000\t190\t\tauto\t4\t5\t\tnull\tnull\t66617.32\nsuzuki\tsx4\t38780\t2011\t1600\t88\t\tauto\t5\t5\t\tnull\tnull\t9622.5\nhyundai\ti30\t25962\t2013\t1600\t88\t\tman\t5\t5\t\tnull\tnull\t10732.79\nhyundai\ti30\t33779\t2013\t1600\t88\t\tman\t5\t5\t\tnull\tnull\t10584.75\nskoda\tfabia\t25862\t2012\t1200\t51\t\tman\t5\t5\t\tnull\tnull\t7253.89\nhyundai\ti30\t19138\t2013\t1600\t88\t\tman\t5\t5\t\tnull\tnull\t11102.89\npeugeot\t207\t56497\t2011\t1400\t54\t\tman\t5\t5\t\tnull\tnull\t5921.54\n\t\t79346\t2011\t1600\t77\t\tman\t5\t5\t\tnull\tnull\t8808.29\nrenault\tfluence\t69038\t2013\t1600\t82\t\tman\t4\t5\t\tnull\tnull\t7994.08\nhyundai\ti20\t49230\t2012\t1200\t57\t\tman\t5\t5\t\tnull\tnull\t6957.81\nseat\tibiza\t43122\t2012\t1200\t51\t\tman\t5\t5\t\tnull\tnull\t7327.91\nmitsubishi\tasx\t15\t2016\t1600\t86\t\tman\t5\t5\t\tnull\tnull\t15544.04\nmitsubishi\tasx\t18\t2016\t1600\t86\t\tman\t5\t5\t\tnull\tnull\t14285.71\nskoda\tfabia\t28151\t2011\t1200\t51\t\tman\t5\t5\t\tnull\tnull\t7142.86\ntoyota\taygo\t71097\t2012\t1000\t50\t\tman\t5\t4\t\tnull\tnull\t6106.59\nkia\tcarens\t24415\t2015\t1700\t100\t\tauto\t5\t7\t\tnull\tnull\t18504.81\nvolkswagen\tgolf\t35828\t2011\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t8882.31\nhyundai\ti20\t27350\t2012\t1200\t57\t\tman\t5\t5\t\tnull\tnull\t6661.73\nhyundai\ti10\t6377\t2015\t1000\t49\t\tman\t5\t5\t\tnull\tnull\t8142.12\ncitroen\tc1\t49887\t2012\t1000\t50\t\tman\t5\t4\t\tnull\tnull\t5181.35\npeugeot\t301\t8154\t2013\t1200\t53\t\tman\t4\t5\t\tnull\tnull\t8142.12\ncitroen\tc3\t20905\t2013\t1200\t60\t\tman\t5\t5\t\tnull\tnull\t8142.12\nskoda\tfabia\t28693\t2013\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t8105.11\nvolkswagen\tgolf\t71764\t2011\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t9363.43\nskoda\tyeti\t78308\t2013\t1200\t77\t\tman\t5\t5\t\tnull\tnull\t11102.89\nskoda\troomster\t65920\t2011\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t8216.14\nrenault\tclio\t2230\t2012\t1100\t55\t\tman\t5\t5\t\tnull\tnull\t7401.92\nskoda\tsuperb\t24840\t2015\t2000\t110\t\tman\t5\t5\t\tnull\tnull\t25906.74\nkia\tsportage\t57248\t2011\t2000\t100\t\tman\t5\t5\t\tnull\tnull\t14803.85\nskoda\troomster\t62807\t2011\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t8438.19\ncitroen\tc1\t31115\t2012\t1000\t50\t\tman\t5\t5\t\tnull\tnull\t5773.5\nhyundai\tix20\t40064\t2011\t1400\t66\t\tman\t5\t5\t\tnull\tnull\t9104.37\npeugeot\t107\t21705\t2011\t1000\t50\t\tauto\t5\t4\t\tnull\tnull\t6143.6\ncitroen\tc4-aircross\t30306\t2014\t1800\t110\t\tman\t5\t5\t\tnull\tnull\t19985.2\ntoyota\taygo\t73628\t2012\t1000\t50\t\tman\t5\t4\t\tnull\tnull\t5551.44\nskoda\tyeti\t617\t2016\t1400\t92\t\tman\t5\t5\t\tnull\tnull\t17024.43\ncitroen\tc1\t10992\t2013\t1000\t50\t\tman\t5\t4\t\tnull\tnull\t6772.76\nopel\tastra\t54011\t2012\t2000\t121\t\tman\t5\t5\t\tnull\tnull\t10584.75\ncitroen\tc4\t21925\t2014\t1600\t88\t\tman\t5\t5\t\tnull\tnull\t9992.6\nskoda\tfabia\t188000\t2005\t1422\t55\t\tman\t5\t5\t\tnull\tnull\t9992.6\nford\tfiesta\t49780\t2012\t1200\t44\t\tman\t5\t5\t\tnull\tnull\t6994.82\nfiat\tdoblo\t145000\t2005\t1910\t77\t\tman\t5\t5\t\tnull\tnull\t3537.75\n\t\t71667\t2012\t1100\t55\t\tman\t5\t5\t\tnull\tnull\t5884.53\njeep\tcherokee\t19664\t2014\t2000\t125\t\tauto\t5\t5\t\tnull\tnull\t30347.89\nrenault\tmegane\t14423\t2014\t1600\t81\t\tman\t5\t5\t\tnull\tnull\t9622.5\ncitroen\tc-elysee\t29132\t2014\t1600\t85\t\tman\t4\t5\t\tnull\tnull\t8364.17\ncitroen\tc1\t32768\t2013\t1000\t50\t\tman\t3\t4\t\tnull\tnull\t4774.24\nskoda\tyeti\t3528\t2015\t1200\t77\t\tman\t5\t5\t\tnull\tnull\t14803.85\nhonda\tcr-v\t46109\t2012\t2200\t110\t\tman\t5\t5\t\tnull\tnull\t16284.23\nopel\tcorsa\t11514\t2014\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t8845.3\ntoyota\tauris\t33981\t2013\t1600\t97\t\tman\t5\t5\t\tnull\tnull\t13212.44\nskoda\toctavia\t37830\t2013\t1800\t132\t\tauto\t5\t5\t\tnull\tnull\t17764.62\nskoda\trapid\t33459\t2014\t1200\t77\t\tman\t5\t5\t\tnull\tnull\t9992.6\nsuzuki\tswift\t90000\t2006\t1328\t68\t\tman\t5\t5\t\tnull\tnull\t9992.6\nhyundai\ti20\t9086\t2015\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t9252.41\nskoda\trapid\t269\t2016\t1200\t66\t\tman\t5\t5\t\tnull\tnull\t11843.08\nhyundai\tsanta-fe\t52621\t2014\t2200\t145\t\tauto\t5\t7\t\tnull\tnull\t29607.7\nrenault\tmegane\t32263\t2012\t1600\t74\t\tman\t5\t5\t\tnull\tnull\t7660.99\nskoda\trapid\t13589\t2014\t1200\t77\t\tman\t5\t5\t\tnull\tnull\t12583.27\nmercedes-benz\t\t40129\t2012\t2100\t125\t\tauto\t5\t5\t\tnull\tnull\t25166.54\nhyundai\tix35\t16891\t2011\t1600\t99\t\tman\t5\t5\t\tnull\tnull\t14285.71\nvolkswagen\ttiguan\t64985\t2012\t2000\t103\t\tauto\t5\t5\t\tnull\tnull\t19985.2\nhyundai\tix20\t47318\t2011\t1600\t92\t\tman\t5\t5\t\tnull\tnull\t9659.51\nhyundai\tix20\t33450\t2011\t1400\t66\t\tman\t5\t5\t\tnull\tnull\t8845.3\nvolkswagen\tjetta\t212288\t2006\t1968\t103\t\tman\t5\t5\t\tnull\tnull\t4770.54\nopel\tastra\t35889\t2012\t1400\t74\t\tman\t5\t5\t\tnull\tnull\t9659.51\nrenault\tmegane\t23538\t2012\t1600\t74\t\tman\t5\t5\t\tnull\tnull\t7401.92\nhyundai\ti30\t21578\t2015\t1600\t88\t\tman\t5\t5\t\tnull\tnull\t11102.89\nrenault\tgrand-scenic\t57057\t2012\t1600\t81\t\tman\t5\t5\t\tnull\tnull\t9400.44\nskoda\tfabia\t38007\t2012\t1200\t51\t\tman\t5\t5\t\tnull\tnull\t6920.8\nskoda\toctavia\t40247\t2013\t1200\t77\t\tman\t5\t5\t\tnull\tnull\t13323.46\nskoda\troomster\t45382\t2011\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t8475.2\nskoda\toctavia\t125244\t2012\t1968\t103\t\tman\t5\t5\t\tnull\tnull\t12324.2\nskoda\tfabia\t67883\t2014\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t8586.23\nhyundai\ti10\t27519\t2014\t1000\t49\t\tman\t5\t5\t\tnull\tnull\t6846.78\nhyundai\ti30\t8605\t2015\t1600\t88\t\tman\t5\t5\t\tnull\tnull\t12472.24\nbmw\t\t28021\t2014\t2000\t135\t\tauto\t4\t5\t\tnull\tnull\t28497.41\nrenault\tthalia\t52300\t2012\t1100\t55\t\tman\t4\t5\t\tnull\tnull\t4293.12\nskoda\toctavia\t35799\t2014\t1400\t81\t\tman\t5\t5\t\tnull\tnull\t14433.75\n\t\t24483\t2011\t1100\t55\t\tman\t4\t5\t\tnull\tnull\t4182.09\nford\tfiesta\t69154\t2012\t1200\t44\t\tman\t5\t5\t\tnull\tnull\t6291.64\nkia\tceed\t37490\t2013\t1400\t73\t\tman\t5\t5\t\tnull\tnull\t11472.98\nvolkswagen\ttouran\t50912\t2011\t1600\t77\t\tman\t5\t5\t\tnull\tnull\t13397.48\n\t\t50590\t2011\t1600\t77\t\tman\t5\t5\t\tnull\tnull\t9622.5\nskoda\tfabia\t25029\t2014\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t9252.41\ntoyota\tyaris\t38495\t2011\t1000\t51\t\tman\t5\t5\t\tnull\tnull\t6439.67\nchevrolet\tcorvette\t19070\t2014\t6200\t343\t\tman\t3\t2\t\tnull\tnull\t62916.36\nhyundai\ti30\t6704\t2015\t1600\t81\t\tman\t5\t5\t\tnull\tnull\t13027.39\nopel\tastra\t71562\t2012\t1400\t74\t\tman\t5\t5\t\tnull\tnull\t9770.54\nhyundai\ti30\t44654\t2013\t1600\t88\t\tman\t5\t5\t\tnull\tnull\t10954.85\nhyundai\ti30\t47143\t2014\t1600\t88\t\tman\t5\t5\t\tnull\tnull\t10695.78\naudi\ta3\t69137\t2012\t1200\t77\t\tauto\t5\t5\t\tnull\tnull\t13693.56\npeugeot\t308\t9421\t2011\t1600\t68\t\tman\t5\t5\t\tnull\tnull\t10510.73\nmini\tcooper\t177005\tnull\t1598\t128\t\tman\t\t4\t\tnull\tnull\t10510.73\nford\ttourneo-connect\t182000\tnull\t1753\t66\t\tman\t5\t5\t\tnull\tnull\t10510.73\nhyundai\tix20\t51549\t2012\t1600\t92\t\tauto\t5\t5\t\tnull\tnull\t10362.69\nrenault\tmegane\t23943\t2012\t1600\t74\t\tman\t5\t5\t\tnull\tnull\t8623.24\nrenault\tmegane\t9500\t2016\t1598\t96\t\tman\t\t5\t\tnull\tnull\t8623.24\ntoyota\tyaris\t41656\t2011\t1000\t51\t\tman\t5\t5\t\tnull\tnull\t6365.66\nsuzuki\tswift\t44956\t2014\t1200\t69\t\tman\t5\t5\t\tnull\tnull\t8253.15\nvolkswagen\tpolo\t21877\t2011\t1200\t51\t\tman\t5\t5\t\tnull\tnull\t7586.97\nhyundai\tix20\t73726\t2012\t1400\t66\t\tman\t5\t5\t\tnull\tnull\t8512.21\nseat\ttoledo\t11428\t2015\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t11658.03\nopel\tcorsa\t10703\t2012\t1200\t63\t\tman\t3\t5\t\tnull\tnull\t7253.89\nnissan\tmicra\t10607\t2014\t1200\t59\t\tman\t5\t5\t\tnull\tnull\t8401.18\nopel\tmeriva\t48909\t2011\t1400\t88\t\tman\t5\t5\t\tnull\tnull\t9252.41\nkia\tvenga\t28286\t2011\t1400\t66\t\tman\t5\t5\t\tnull\tnull\t7772.02\nford\tmondeo\t26750\t2015\t2000\t132\t\tman\t5\t5\t\tnull\tnull\t22205.77\nsuzuki\tswift\t39024\t2014\t1600\t100\t\tman\t5\t5\t\tnull\tnull\t11472.98\nskoda\toctavia\t19111\t2014\t1200\t77\t\tman\t5\t5\t\tnull\tnull\t13175.43\nskoda\tfabia\t51292\t2011\t1200\t51\t\tman\t5\t5\t\tnull\tnull\t6513.69\nvolkswagen\tpassat\t210000\t2010\t1968\t105\t\tauto\t5\t5\t\tnull\tnull\t8475.2\nrenault\tmegane\t17004\t2011\t1600\t74\t\tman\t5\t5\t\tnull\tnull\t6883.79\nsuzuki\tswift\t16056\t2014\t1200\t69\t\tman\t5\t5\t\tnull\tnull\t8734.27\nopel\tmeriva\t29826\t2012\t1400\t88\t\tman\t5\t5\t\tnull\tnull\t10214.66\nhyundai\tix35\t43038\t2011\t1600\t99\t\tman\t5\t5\t\tnull\tnull\t13323.46\nkia\tsportage\t76998\t2011\t2000\t100\t\tman\t5\t5\t\tnull\tnull\t14544.78\nkia\tpicanto\t53469\t2012\t1000\t51\t\tman\t5\t5\t\tnull\tnull\t5551.44\nhyundai\ti20\t8426\t2015\t1200\t62\t\tman\t5\t5\t\tnull\tnull\t9548.48\nkia\tceed\t46579\t2011\t1400\t66\t\tman\t5\t5\t\tnull\tnull\t7401.92\nchevrolet\tspark\t27100\t2011\t1000\t50\t\tman\t5\t5\t\tnull\tnull\t4737.23\nhyundai\ti20\t49489\t2012\t1200\t57\t\tman\t5\t5\t\tnull\tnull\t6365.66\nhonda\tcivic\t52923\t2011\t1300\t73\t\tman\t5\t5\t\tnull\tnull\t8956.33\nskoda\tsuperb\t78995\t2014\t3597\t191\t\tauto\t5\t5\t\tnull\tnull\t23312.36\nskoda\tfabia\t51124\t2011\t1200\t77\t\tman\t5\t5\t\tnull\tnull\t8364.17\nhyundai\ti30\t24037\t2013\t1600\t88\t\tman\t5\t5\t\tnull\tnull\t11102.89\ntoyota\tyaris\t12683\t2014\t1000\t51\t\tman\t5\t5\t\tnull\tnull\t9622.5\nskoda\toctavia\t41539\t2014\t1400\t81\t\tman\t5\t5\t\tnull\tnull\t16284.23\nkia\tsportage\t56792\t2011\t2000\t120\t\tman\t5\t5\t\tnull\tnull\t13767.58\nvolkswagen\tmultivan\t60249\t2011\t2000\t132\t\tauto\t5\t7\t\tnull\tnull\t30347.89\ncitroen\tc4\t42271\t2012\t1400\t70\t\tman\t5\t5\t\tnull\tnull\t8364.17\nfiat\tpunto\t16652\t2013\t1400\t57\t\tauto\t5\t5\t\tnull\tnull\t8142.12\nkia\tsportage\t65165\t2011\t2000\t100\t\tauto\t5\t5\t\tnull\tnull\t15544.04\nkia\tceed\t27157\t2014\t1400\t73\t\tman\t5\t5\t\tnull\tnull\t9992.6\nhyundai\tix35\t61150\t2012\t1700\t85\t\tman\t5\t5\t\tnull\tnull\t13915.62\nskoda\tyeti\t18600\t2015\t1200\t77\t\tman\t5\t5\t\tnull\tnull\t13471.5\npeugeot\t308\t55667\t2012\t1600\t68\t\tman\t5\t5\t\tnull\tnull\t8734.27\ncitroen\tc-elysee\t34519\t2014\t1600\t68\t\tman\t4\t5\t\tnull\tnull\t9252.41\nskoda\toctavia\t10884\t2015\t1968\t110\t\tauto\t5\t5\t\tnull\tnull\t22945.97\nsuzuki\tsx4\t26882\t2011\t1500\t82\t\tman\t5\t5\t\tnull\tnull\t7401.92\nskoda\trapid\t25859\t2013\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t9955.59\nskoda\toctavia\t72208\t2011\t1600\t77\t\tman\t5\t5\t\tnull\tnull\t9067.36\nskoda\tfabia\t63320\t2012\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t7957.07\ncitroen\tc3\t54325\t2012\t1400\t54\t\tman\t5\t5\t\tnull\tnull\t7031.83\nrenault\tmegane\t65366\t2011\t1600\t74\t\tman\t5\t5\t\tnull\tnull\t6513.69\npeugeot\t208\t18061\t2012\t1400\t70\t\tman\t5\t5\t\tnull\tnull\t9400.44\nhyundai\tix35\t63646\t2011\t2000\t100\t\tman\t5\t5\t\tnull\tnull\t14063.66\nskoda\tfabia\t205355\t2009\t1422\t59\t\tman\t5\t5\t\tnull\tnull\t14063.66\nhyundai\tix20\t5813\t2011\t1400\t66\t\tman\t5\t5\t\tnull\tnull\t9807.55\nskoda\trapid\t68183\t2013\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t9252.41\nbmw\t\t40078\t2013\t2000\t135\t\tauto\t4\t5\t\tnull\tnull\t25906.74\nrenault\tthalia\t10539\t2012\t1100\t55\t\tman\t4\t5\t\tnull\tnull\t4737.23\nrenault\tscenic\t79525\t2011\t1500\t78\t\tman\t5\t5\t\tnull\tnull\t8512.21\nvolkswagen\tgolf\t48471\t2011\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t9622.5\nvolkswagen\tgolf\t75637\t2011\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t8882.31\ncitroen\tc1\t51804\t2012\t1000\t50\t\tman\t5\t4\t\tnull\tnull\t5403.4\n\t\t75594\t2011\t1500\t81\t\tman\t5\t5\t\tnull\tnull\t9992.6\nhyundai\ti20\t36737\t2012\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t6735.75\nskoda\tfabia\t26278\t2011\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t7253.89\nskoda\tfabia\t77376\t2012\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t6291.64\nkia\trio\t16261\t2013\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t8734.27\n\t\t17\t2016\t1600\t84\t\tman\t5\t5\t\tnull\tnull\t14174.69\nhyundai\ti10\t10688\t2014\t1000\t49\t\tman\t5\t5\t\tnull\tnull\t7623.98\ntoyota\taygo\t21000\t2013\t1000\t50\t\tman\t5\t5\t\tnull\tnull\t6513.69\nskoda\tcitigo\t17189\t2015\t1000\t44\t\tman\t5\t4\t\tnull\tnull\t7772.02\nskoda\trapid\t44889\t2014\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t9992.6\nskoda\tfabia\t43134\t2014\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t8882.31\npeugeot\t308\t30887\t2014\t1200\t60\t\tman\t5\t5\t\tnull\tnull\t10732.79\ntoyota\taygo\t73646\t2012\t1000\t50\t\tman\t5\t4\t\tnull\tnull\t5921.54\nskoda\tfabia\t41254\t2011\t1200\t44\t\tman\t5\t5\t\tnull\tnull\t6365.66\nhyundai\ti30\t45335\t2012\t1600\t88\t\tman\t5\t5\t\tnull\tnull\t9696.52\nhyundai\ti20\t61690\t2011\t1200\t57\t\tman\t5\t5\t\tnull\tnull\t6291.64\nskoda\tfabia\t7594\t2015\t1000\t55\t\tman\t5\t5\t\tnull\tnull\t10732.79\nsubaru\tforester\t27468\t2012\t2000\t108\t\tman\t5\t5\t\tnull\tnull\t16654.33\nvolkswagen\tbeetle\t46618\t2012\t1200\t77\t\tman\t3\t4\t\tnull\tnull\t11843.08\nvolkswagen\tbeetle\t74218\t2012\t1400\t118\t\tman\t3\t4\t\tnull\tnull\t12583.27\ntoyota\tyaris\t327\t2016\t1500\t74\t\tman\t5\t5\t\tnull\tnull\t14803.85\nskoda\trapid\t21601\t2014\t1197\t63\t\tman\t5\t5\t\tnull\tnull\t14803.85\nhyundai\ti30\t31184\t2011\t1600\t66\t\tman\t5\t5\t\tnull\tnull\t8142.12\nvolkswagen\tpassat\t79709\t2013\t2000\t103\t\tman\t5\t5\t\tnull\tnull\t15544.04\nskoda\tfabia\t41772\t2012\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t7105.85\nskoda\tfabia\t5495\t2012\t1200\t44\t\tman\t5\t5\t\tnull\tnull\t7253.89\nhyundai\tix20\t42799\t2011\t1400\t66\t\tman\t5\t5\t\tnull\tnull\t8512.21\ntoyota\tauris\t23\t2016\t1600\t97\t\tman\t5\t5\t\tnull\tnull\t16284.23\nvolkswagen\tpolo\t4760\t2015\t1200\t66\t\tman\t5\t5\t\tnull\tnull\t12065.14\nskoda\troomster\t12642\t2015\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t11102.89\nmazda\t3\t10765\t2016\t1500\t74\t\tman\t5\t5\t\tnull\tnull\t14655.81\nseat\tleon\t27301\t2011\t1200\t77\t\tman\t5\t5\t\tnull\tnull\t8512.21\nkia\tceed\t30776\t2013\t1600\t99\t\tman\t5\t5\t\tnull\tnull\t9474.46\nvolkswagen\tgolf\t35359\t2013\t1200\t77\t\tman\t5\t5\t\tnull\tnull\t12805.33\nhyundai\tix20\t66886\t2012\t1400\t66\t\tman\t5\t5\t\tnull\tnull\t8253.15\n\t\t65239\t2011\t1600\t77\t\tman\t5\t5\t\tnull\tnull\t10621.76\nhyundai\ti20\t51260\t2011\t1200\t57\t\tman\t5\t5\t\tnull\tnull\t5921.54\nskoda\toctavia\t199800\tnull\t1968\t103\t\tman\t5\t5\t\tnull\tnull\t5921.54\nhyundai\ti30\t30890\t2012\t1600\t88\t\tman\t5\t5\t\tnull\tnull\t10140.64\nrenault\tmegane\t33967\t2012\t1600\t81\t\tman\t3\t5\t\tnull\tnull\t7253.89\nhyundai\tix20\t546\t2015\t1400\t66\t\tman\t5\t5\t\tnull\tnull\t10843.82\naudi\ta6\t192000\t2011\t1968\t120\t\tauto\t5\tnull\t\tnull\tnull\t10843.82\nvolkswagen\tcc\t54965\t2014\t2000\t103\t\tauto\t4\t5\t\tnull\tnull\t21465.58\nnissan\tnote\t31444\t2011\t1400\t65\t\tman\t5\t5\t\tnull\tnull\t6883.79\n\t\t12797\t2014\t1600\t77\t\tman\t5\t5\t\tnull\tnull\t12435.23\nhyundai\ti30\t46715\t2012\t1400\t73\t\tman\t5\t5\t\tnull\tnull\t8882.31\nskoda\tfabia\t48650\tnull\t1198\t51\t\tman\t5\t5\t\tnull\tnull\t4885.27\nhyundai\tix35\t66124\t2011\t1600\t99\t\tman\t5\t5\t\tnull\tnull\t12065.14\nhyundai\ti40\t48\t2015\t1700\t104\t\tman\t5\t5\t\tnull\tnull\t19985.2\nskoda\tfabia\t95120\tnull\t1422\t51\t\tman\t5\t5\t\tnull\tnull\t19985.2\n\t\t9500\t2016\t1598\t118\t\tauto\t\t5\t\tnull\tnull\t19985.2\nford\tmondeo\t203732\t2008\t1997\t103\t\tman\t5\t5\t\tnull\tnull\t5736.49\naudi\ta6\t77576\t2013\t2000\t130\t\tman\t5\t5\t\tnull\tnull\t22575.87\n\t\t18\t2016\t1200\t92\t\tman\t5\t5\t\tnull\tnull\t15358.99\nkia\trio\t4285\t2014\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t8512.21\nhyundai\ti30\t13328\t2014\t1400\t73\t\tman\t5\t5\t\tnull\tnull\t10584.75\ninfinity\tm37\t42147\t2011\t3700\t235\t\tauto\t4\t5\t\tnull\tnull\t24056.25\nkia\tsportage\t73175\t2011\t2000\t100\t\tman\t5\t5\t\tnull\tnull\t14433.75\ntoyota\tyaris\t44182\t2011\t1000\t51\t\tman\t5\t5\t\tnull\tnull\t5921.54\nrenault\tmegane\t54005\t2011\t1500\t81\t\tman\t5\t5\t\tnull\tnull\t7401.92\nmercedes-benz\t\t58907\t2011\t1800\t100\t\tman\t5\t5\t\tnull\tnull\t15544.04\nfiat\tpanda\t42551\t2011\t1100\t40\t\tman\t5\t5\t\tnull\tnull\t4589.19\nskoda\toctavia\t73541\t2012\t1400\t90\t\tman\t5\t5\t\tnull\tnull\t8882.31\nhyundai\tix20\t41433\t2013\t1400\t66\t\tman\t5\t5\t\tnull\tnull\t8956.33\nskoda\tfabia\t70801\t2011\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t6402.66\nkia\tvenga\t37103\t2012\t1400\t66\t\tman\t5\t5\t\tnull\tnull\t7772.02\naudi\ta4\t248700\tnull\t1968\t103\t\tman\t5\t5\t\tnull\tnull\t7772.02\nskoda\tfabia\t57909\t2011\t1200\t44\t\tman\t5\t5\t\tnull\tnull\t5773.5\nchevrolet\tcruze\t62439\t2012\t1600\t91\t\tman\t5\t5\t\tnull\tnull\t7994.08\npeugeot\t207\t43323\t2011\t1400\t54\t\tman\t5\t5\t\tnull\tnull\t6291.64\ncitroen\tc4\t43968\t2011\t1600\t88\t\tman\t5\t5\t\tnull\tnull\t8882.31\nskoda\tfabia\t38951\t2012\t1200\t51\t\tman\t5\t5\t\tnull\tnull\t6883.79\ncitroen\tc1\t3090\t2015\t1199\t60\t\tman\t5\t5\t\tnull\tnull\t6883.79\naudi\ta4-allroad\t56895\t2012\t2000\t130\t\tauto\t5\t5\t\tnull\tnull\t25906.74\nhyundai\ti20\t6728\t2015\t1200\t55\t\tman\t5\t5\t\tnull\tnull\t9474.46\nhyundai\ti30\t38833\t2012\t1600\t88\t\tman\t5\t5\t\tnull\tnull\t9067.36\nford\tfocus\t73568\t2011\t1600\t74\t\tman\t5\t5\t\tnull\tnull\t7031.83\nmazda\tcx-5\t77300\t2014\t2200\t129\t\tauto\t5\t5\t\tnull\tnull\t22945.97\nskoda\toctavia\t27258\t2013\t1600\t77\t\tman\t5\t5\t\tnull\tnull\t13915.62\nhyundai\ti30\t33064\t2013\t1600\t88\t\tman\t5\t5\t\tnull\tnull\t10658.77\nskoda\toctavia\t60933\t2014\t1600\t77\t\tman\t5\t5\t\tnull\tnull\t12546.26\nkia\tceed\t31775\t2013\t1400\t77\t\tman\t5\t5\t\tnull\tnull\t9770.54\nford\tfocus\t79844\t2011\t1600\t74\t\tman\t5\t5\t\tnull\tnull\t7253.89\nkia\tceed\t52540\t2011\t1600\t92\t\tman\t5\t5\t\tnull\tnull\t7772.02\nskoda\toctavia\t12382\t2015\t1600\t66\t\tman\t5\t5\t\tnull\tnull\t13323.46\nopel\tcorsa\t30682\t2011\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t6032.57\nvolkswagen\tgolf\t78813\t2011\t1200\t77\t\tman\t5\t5\t\tnull\tnull\t8882.31\nhyundai\ti20\t27310\t2013\t1200\t62\t\tman\t5\t5\t\tnull\tnull\t7253.89\nskoda\troomster\t17100\t2011\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t8882.31\nopel\tinsignia\t76213\t2012\t2000\t96\t\tman\t5\t5\t\tnull\tnull\t11102.89\nmazda\t6\t69693\t2013\t2200\t129\t\tauto\t5\t5\t\tnull\tnull\t20355.29\nopel\tinsignia\t76494\t2011\t2000\t96\t\tman\t5\t5\t\tnull\tnull\t11472.98\nskoda\trapid\t17456\t2013\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t9511.47\nsubaru\tforester\t236800\t2002\t1994\t92\t\tman\t5\t5\t\tnull\tnull\t3323.46\nhyundai\ti30\t29264\t2013\t1600\t88\t\tman\t5\t5\t\tnull\tnull\t9844.56\ncitroen\tc4\t37506\t2013\t1400\t70\t\tman\t5\t5\t\tnull\tnull\t7994.08\nford\tfiesta\t31733\t2012\t1200\t44\t\tman\t5\t5\t\tnull\tnull\t6883.79\ncitroen\tc1\t21501\t2013\t1000\t50\t\tman\t5\t4\t\tnull\tnull\t5773.5\nskoda\trapid\t29379\t2014\t1600\t66\t\tman\t5\t5\t\tnull\tnull\t11102.89\nseat\tibiza\t59825\t2012\t1200\t51\t\tman\t5\t5\t\tnull\tnull\t6217.62\nskoda\tfabia\t28637\t2014\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t8253.15\nfiat\tlinea\t39793\t2012\t1400\t57\t\tman\t4\t5\t\tnull\tnull\t5403.4\nskoda\tcitigo\t33862\t2012\t1000\t55\t\tman\t3\t4\t\tnull\tnull\t5847.52\nvolkswagen\tpolo\t63781\t2011\t1200\t44\t\tman\t5\t5\t\tnull\tnull\t6809.77\npeugeot\t5008\t34422\t2014\t1600\t84\t\tman\t5\t5\t\tnull\tnull\t14063.66\nkia\tsportage\t39645\t2012\t2000\t100\t\tman\t5\t5\t\tnull\tnull\t15544.04\nseat\ttoledo\t31202\t2013\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t8734.27\nopel\tantara\t51930\t2011\t2200\t120\t\tman\t5\t5\t\tnull\tnull\t12546.26\naudi\ta5\t63454\t2013\t3000\t180\t\tauto\t5\t5\t\tnull\tnull\t27757.22\nvolkswagen\tpolo\t70291\t2011\t1400\t63\t\tman\t5\t5\t\tnull\tnull\t7253.89\nchevrolet\torlando\t22063\t2011\t2000\t96\t\tman\t5\t7\t\tnull\tnull\t10732.79\ncitroen\tc3\t56446\t2011\t1400\t54\t\tman\t5\t5\t\tnull\tnull\t6143.6\nford\ttourneo-connect\t249000\t2006\t1753\t66\t\tman\t5\t5\t\tnull\tnull\t2772.02\nskoda\toctavia\t18208\t2015\t1968\t135\t\tauto\t5\t5\t\tnull\tnull\t2772.02\npeugeot\t508\t58707\t2011\t2000\t103\t\tman\t5\t5\t\tnull\tnull\t11102.89\nford\tfocus\t67248\t2011\t1600\t70\t\tman\t5\t5\t\tnull\tnull\t7772.02\nskoda\toctavia\t139488\t2012\t1968\t103\t\tman\t5\t5\t\tnull\tnull\t10732.79\nmercedes-benz\t\t3080\t2013\t5500\t285\t\tauto\t2\t4\t\tnull\tnull\t233160.62\nrenault\tthalia\t54424\t2011\t1100\t55\t\tman\t4\t5\t\tnull\tnull\t3441.89\nskoda\toctavia\t7603\t2015\t1968\t135\t\tauto\t5\t5\t\tnull\tnull\t3441.89\nopel\tcorsa\t10393\t2015\t1400\t74\t\tman\t5\t5\t\tnull\tnull\t13138.42\nskoda\tyeti\t16193\t2015\t1200\t81\t\tman\t5\t5\t\tnull\tnull\t13175.43\n\t\t162200\t1999\t1498\t63\t\tman\t\t5\t\tnull\tnull\t13175.43\nrenault\tmegane\t199500\t2003\t1870\t88\t\tman\t4\t5\t\tnull\tnull\t13175.43\ncitroen\tc4-picasso\t71471\tnull\t1560\t82\t\tman\t5\t5\t\tnull\tnull\t13175.43\nskoda\toctavia\t8689\t2015\t1968\t110\t\tauto\t5\t5\t\tnull\tnull\t13175.43\nvolkswagen\tpassat\t165000\t2013\t1968\t130\t\tauto\t5\t5\t\tnull\tnull\t16121.39\nskoda\toctavia\t37636\t2015\t1968\t110\t\tman\t5\t5\t\tnull\tnull\t16617.32\ncitroen\tc1\t3637\t2015\t1199\t60\t\tman\t5\t5\t\tnull\tnull\t16617.32\ntoyota\taygo\t86048\tnull\t998\t50\t\t\t5\t5\t\tnull\tnull\t16617.32\npeugeot\t206\t173119\t2000\t1124\t44\t\tman\t3\t5\t\tnull\tnull\t921.54\n\t\t38252\t2012\t1598\t60\t\tman\t5\t5\t\tnull\tnull\t6661.36\nford\tfusion\t164817\tnull\t1399\t50\t\tman\t5\t5\t\tnull\tnull\t6661.36\nford\tfusion\t161973\t2004\t1388\t59\t\tauto\t5\t5\t\tnull\tnull\t6661.36\nmini\tcooper\t120000\t2005\t1598\t85\t\tman\t\tnull\t\tnull\tnull\t6994.82\nsmart\tfortwo\t81123\t2006\t698\t37\t\tauto\t2\t2\t\tnull\tnull\t2442.6\npeugeot\t207\t81122\t2008\t1360\t70\t\tman\t5\t5\t\tnull\tnull\t4404.15\nskoda\toctavia\t20580\t2015\t1395\t81\t\tman\t5\t5\t\tnull\tnull\t4404.15\nskoda\toctavia\t16368\t2015\t1395\t103\t\tman\t5\t5\t\tnull\tnull\t14988.9\nskoda\toctavia\t53862\t2013\t1968\t81\t\tman\t5\t5\t\tnull\tnull\t14988.9\naudi\ta6\t253640\t2005\t2698\t132\t\tman\t5\t5\t\tnull\tnull\t14988.9\nkia\tmagentis\t93000\t2008\t1991\t103\t\tman\t4\t5\t\tnull\tnull\t14988.9\nford\tc-max\t213000\tnull\t1753\t85\t\tman\t5\t5\t\tnull\tnull\t2923.76\n\t\t122000\t2011\t1461\t55\t\tman\t5\t5\t\tnull\tnull\t2923.76\npeugeot\texpert-tepee\t202700\tnull\t1997\t94\t\t\t4\t6\t\tnull\tnull\t9955.59\nvolkswagen\tpolo\t133123\t2003\t1198\t44\t\tman\t3\t5\t\tnull\tnull\t9955.59\nopel\tvivaro\t208200\t2008\t1998\tnull\t\tman\t6\t9\t\tnull\tnull\t6658.03\ncitroen\tc6\t58500\t2011\t2992\t177\t\tauto\t5\t5\t\tnull\tnull\t18134.72\nmercedes-benz\t\t190000\t2006\t5981\t450\t\tman\t2\t5\t\tnull\tnull\t18134.72\nopel\tcorsa\t146176\t2000\t973\t40\t\tman\t\t5\t\tnull\tnull\t1106.59\nskoda\toctavia\t88504\t2012\t1968\t103\t\tman\t5\t5\t\tnull\tnull\t12509.25\naudi\ta6-allroad\t248000\t2009\t2976\t176\t\tauto\t\t5\t\tnull\tnull\t12509.25\ncitroen\tc4-picasso\t53000\tnull\t1598\t88\t\tman\t5\t5\t\tnull\tnull\t9215.4\nskoda\toctavia\t123000\t2012\t1986\t103\t\tman\t\t5\t\tnull\tnull\t13249.41\nskoda\tyeti\t127995\t2011\t1968\t81\t\tman\t5\t5\t\tnull\tnull\t9585.49\npeugeot\t306\t214789\t1998\t1360\t55\t\tman\t5\t5\t\tnull\tnull\t9585.49\nskoda\toctavia\t15153\t2015\t1598\t81\t\tman\t5\t5\t\tnull\tnull\t9585.49\n\t\t325000\tnull\t1985\t96\t\t\t\tnull\t\tnull\tnull\t9585.49\nhonda\tcr-z\t79084\t2011\t1497\t84\t\tman\t5\t5\t\tnull\tnull\t9585.49\nford\tfocus\t226000\t2011\t1560\t66\t\tman\t5\t5\t\tnull\tnull\t3663.95\nhonda\tcivic\t33400\t2014\t1597\t88\t\tman\t5\t5\t\tnull\tnull\t14026.65\nopel\tmeriva\t0\t2016\t1398\t74\t\tman\t5\tnull\t\tnull\tnull\t14026.65\nalfa-romeo\tgtv\t89266\tnull\t1970\t110\t\tman\t3\tnull\t\tnull\tnull\t14026.65\nford\tmondeo\t200500\t2011\t2179\t147\t\tman\t5\t5\t\tnull\tnull\t9248.7\ncitroen\tjumpy\t237499\t2001\t1997\t69\t\tman\t5\t5\t\tnull\tnull\t2553.66\ncitroen\tc4\t171000\t2006\t1997\t100\t\tman\t5\t5\t\tnull\tnull\t2553.66\naudi\ta3\t312000\tnull\t1896\t81\t\tman\t3\t5\t\tnull\tnull\t2553.66\nseat\ttoledo\t235123\t2001\t1896\t81\t\tman\t4\t5\t\tnull\tnull\t2553.66\nvolkswagen\tpolo\t23000\t2014\t999\t55\t\tman\t5\t5\t\tnull\tnull\t2553.66\ntoyota\tland-cruiser\t192000\t2000\t4164\t150\t\tauto\t5\t7\t\tnull\tnull\t14766.84\nkia\tvenga\t71000\t2009\t1396\t66\t\tman\t5\t5\t\tnull\tnull\t6846.78\nskoda\tfabia\t265500\t2006\t1422\t59\t\tman\t5\t4\t\tnull\tnull\t2146.56\ncitroen\tc3-picasso\t3\t2016\t1397\t70\t\tman\t5\t5\t\tnull\tnull\t2146.56\nvolkswagen\tpolo\t172500\t2002\t1422\t55\t\tman\t3\t5\t\tnull\tnull\t1961.51\naudi\tq7\t118115\t2010\t2995\t200\t\tauto\t5\t5\t\tnull\tnull\t1961.51\nsubaru\tlegacy\t131000\t2004\t1997\t101\t\tman\t5\t5\t\tnull\tnull\t1961.51\nkia\tvenga\t41000\t2011\t1591\t91\t\tman\t5\t5\t\tnull\tnull\t7768.32\nrover\tdiscovery\t270000\t2001\t2495\t101\t\tman\t5\t5\t\tnull\tnull\t2405.63\nmazda\t6\t176123\t2007\t1998\t89\t\tman\t5\t5\t\tnull\tnull\t3922.98\nskoda\tfabia\t8689\t2015\t1197\t66\t\tman\t5\t5\t\tnull\tnull\t10251.67\npeugeot\tpartner\t202000\t1999\t1360\t55\t\tman\t5\t5\t\tnull\tnull\t10251.67\nford\tfocus\t141832\t2012\t998\t92\t\tman\t5\t5\t\tnull\tnull\t10251.67\nskoda\toctavia\t71508\t2013\t1968\t103\t\tman\t5\t5\t\tnull\tnull\t12916.36\nskoda\toctavia\t163000\t2006\t1896\t77\t\tman\t5\t5\t\tnull\tnull\t5736.49\nfiat\tpanda\t85000\t1991\t999\t33\t\t\t3\t5\t\tnull\tnull\t5736.49\nskoda\tfelicia\t155600\t1998\t1298\t50\t\tman\t5\t5\t\tnull\tnull\t884.53\ntoyota\tavensis\t86012\tnull\t1998\t91\t\tman\t5\t5\t\tnull\tnull\t884.53\nvolkswagen\tpolo\t173000\t1995\t1390\t44\t\tman\t5\t5\t\tnull\tnull\t370.1\naudi\ta6-allroad\t311773\t2008\t2967\t171\t\tauto\t5\t5\t\tnull\tnull\t9215.4\nskoda\trapid\t15210\t2015\t1197\t77\t\tman\t5\t5\t\tnull\tnull\t11313.84\nskoda\troomster\t19938\t2015\t1197\t63\t\tman\t5\t5\t\tnull\tnull\t10917.84\nford\ttourneo-courier\t0\t2016\t998\t74\t\tman\t5\t5\t\tnull\tnull\t10917.84\nvolkswagen\tgolf\t145600\tnull\t1595\t75\t\tman\t\tnull\t\tnull\tnull\t10917.84\nvolkswagen\tgolf\t170000\t2011\t1197\t77\t\tman\t5\t5\t\tnull\tnull\t6291.64\nskoda\tfabia\t156757\tnull\t1598\t55\t\t\t5\t5\t\tnull\tnull\t5177.65\nvolkswagen\tgolf\t195471\t2011\t1598\t77\t\tman\t5\t5\t\tnull\tnull\t5177.65\njeep\tcherokee\t149700\tnull\t2499\t105\t\tman\t5\t5\t\tnull\tnull\t3682.46\nskoda\tfelicia\t113434\t2001\t1289\t50\t\tman\t\tnull\t\tnull\tnull\t740.19\nvolkswagen\tmultivan\t363500\t1999\t2461\t111\t\tman\t5\t5\t\tnull\tnull\t8105.11\nskoda\toctavia\t44200\t2014\t1598\t77\t\tman\t5\tnull\t\tnull\tnull\t13841.6\ncitroen\tc5\t294500\tnull\t1749\t85\t\tman\t5\t5\t\tnull\tnull\t1794.97\nvolkswagen\tpassat\t236200\t2004\t1896\t96\t\tman\t5\t5\t\tnull\tnull\t1794.97\n\t\t98000\t2003\t2417\t75\t\tman\t4\t5\t\tnull\tnull\t5551.44\ncitroen\tsaxo\t141540\t2002\t1124\t44\t\tman\t5\t5\t\tnull\tnull\t5551.44\nvolvo\ts60\t226000\tnull\t2401\t96\t\tman\t4\t5\t\tnull\tnull\t5551.44\nford\tgalaxy\t259700\tnull\t1896\t81\t\tman\t5\t7\t\tnull\tnull\t1406.37\nskoda\tsuperb\t157503\tnull\t1968\t103\t\tman\t5\t5\t\tnull\tnull\t11095.48\nsmart\tforfour\t146000\t2004\t1124\t55\t\tman\t5\t5\t\tnull\tnull\t11095.48\nhyundai\ti30\t28900\t2012\t1396\t80\t\tman\t5\t5\t\tnull\tnull\t7768.32\npeugeot\t206\t107230\t2005\t1124\t44\t\tman\t3\t5\t\tnull\tnull\t7768.32\nford\tmondeo\t174000\t2003\t1998\t85\t\tman\t5\t5\t\tnull\tnull\t7768.32\nskoda\toctavia\t157779\t2007\t1595\t75\t\tman\t5\t5\t\tnull\tnull\t3923.02\npeugeot\t5008\t119733\tnull\t1998\t110\t\tman\t5\tnull\t\tnull\tnull\t12916.36\nfiat\tbrava\t171000\t1997\t1370\t59\t\tman\t5\t5\t\tnull\tnull\t12916.36\nfiat\tstilo\t157155\tnull\t1910\t85\t\tman\t5\t5\t\tnull\tnull\t2387.12\nhonda\tfr-v\t106820\t2005\t2204\t103\t\tman\t5\t6\t\tnull\tnull\t6291.64\ncitroen\tc3\t56000\t2009\t1124\t44\t\tman\t5\t5\t\tnull\tnull\t4034.05\nford\tgalaxy\t195000\t2013\t1997\t103\t\tman\t5\t7\t\tnull\tnull\t4034.05\npeugeot\t3008\t0\t2016\t1997\t110\t\tauto\t5\t5\t\tnull\tnull\t4034.05\npeugeot\t206\t116000\tnull\t1868\t51\t\tman\t5\t5\t\tnull\tnull\t1480.35\nskoda\tfabia\t148900\tnull\t1422\t51\t\tman\t5\t5\t\tnull\tnull\t4441.12\npeugeot\t106\t240000\t1996\t1527\t40\t\tman\t3\t5\t\tnull\tnull\t740.19\nvolkswagen\tpassat\t239000\t2001\t1781\t110\t\tman\t5\t5\t\tnull\tnull\t740.19\nseat\tibiza\t84300\tnull\t1198\t44\t\tman\t3\t5\t\tnull\tnull\t740.19\nseat\taltea\t180000\tnull\t1896\t77\t\tman\t5\t5\t\tnull\tnull\t740.19\nskoda\toctavia\t1000\t2003\t1896\t81\t\t\t5\t5\t\tnull\tnull\t740.19\nskoda\tsuperb\t194200\tnull\t1968\t103\t\tman\t5\t5\t\tnull\tnull\t10362.66\nvolkswagen\tgolf\t87735\t1999\t1595\t74\t\tman\t5\t5\t\tnull\tnull\t1846.78\nrenault\tfluence\t72500\t2013\t1461\t81\t\tman\t\tnull\t\tnull\tnull\t8882.31\nskoda\tfabia\t139019\t2003\t1390\t74\t\tman\t5\t5\t\tnull\tnull\t8882.31\nseat\tibiza\t122000\tnull\t1199\t55\t\tman\t5\t5\t\tnull\tnull\t4811.21\nopel\tmokka\t0\t2016\t1364\t103\t\tman\t5\t5\t\tnull\tnull\t4811.21\nskoda\trapid\t25900\t2015\t1197\t66\t\tman\t4\tnull\t\tnull\tnull\t10325.68\ncitroen\tc4-picasso\t126870\t2010\t1560\t80\t\tman\t5\t7\t\tnull\tnull\t8141.75\npeugeot\t206\t211000\t1999\t1360\t55\t\tman\t3\t5\t\tnull\tnull\t8141.75\npeugeot\t3008\t180216\tnull\t1560\t84\t\tman\t\tnull\t\tnull\tnull\t9585.49\npeugeot\t206\t188000\t2000\t1124\t44\t\tman\t3\t5\t\tnull\tnull\t9585.49\nvolkswagen\tpassat\t29952\t2015\t1968\t110\t\tauto\t5\t5\t\tnull\tnull\t26609.92\npeugeot\t307\t214460\t2007\t1560\t66\t\tman\t3\t5\t\tnull\tnull\t2183.57\ntoyota\tland-cruiser\t226236\t2000\t4164\t150\t\tman\t5\t7\t\tnull\tnull\t11065.88\nopel\tastra\t6000\t2016\t999\t77\t\tman\t5\t5\t\tnull\tnull\t14800.15\nsuzuki\tsplash\t121000\t2009\t996\t48\t\tman\t5\t5\t\tnull\tnull\t14800.15\nskoda\trapid\t15130\t2015\t1197\t81\t\tman\t5\t5\t\tnull\tnull\t11099.19\nvolkswagen\tpolo\t10000\tnull\t1197\t66\t\tman\t5\t5\t\tnull\tnull\t9955.59\nvolkswagen\tpassat-cc\t166500\t2013\t1968\t103\t\tman\t5\tnull\t\tnull\tnull\t14063.66\nrenault\tclio\t216000\tnull\t1390\t72\t\tman\t5\t5\t\tnull\tnull\t14063.66\nbmw\tx6\t5000\tnull\t2993\t280\t\tauto\t4\t5\t\tnull\tnull\t14063.66\nskoda\toctavia\t128806\t2007\t1968\t103\t\tman\t5\t5\t\tnull\tnull\t6735.75\nvolvo\txc90\t190000\t2009\t2400\t136\t\tman\t5\t5\t\tnull\tnull\t6735.75\nhyundai\tix35\t135750\t2011\t1995\t135\t\tman\t5\t5\t\tnull\tnull\t12139.16\nford\tgalaxy\t135000\t2011\t1997\t103\t\tman\t5\t7\t\tnull\tnull\t12509.25\ncitroen\tc3\t129451\tnull\t1360\t54\t\tman\t5\t5\t\tnull\tnull\t2738.71\nmercedes-benz\t\t182879\t2003\t1598\t75\t\tman\t5\t5\t\tnull\tnull\t3145.82\nvolkswagen\ttouareg\t171652\t2006\t2461\t128\t\tauto\t5\t5\t\tnull\tnull\t7364.91\nvolkswagen\tpassat\t180000\t2007\t1968\t125\t\tman\t5\t5\t\tnull\tnull\t7364.91\nvolkswagen\ttiguan\t13000\t2015\t1968\t81\t\tman\t5\t5\t\tnull\tnull\t20318.28\naudi\ta3\t183000\t1999\t1595\t74\t\tman\t3\t5\t\tnull\tnull\t1554.4\nkia\tcarnival\t146000\t2007\t2900\t136\t\tauto\t5\t6\t\tnull\tnull\t4663.21\nnissan\tmicra\t122776\t2007\t1240\t59\t\tman\t5\t5\t\tnull\tnull\t3293.86\nvolkswagen\tpassat-cc\t186200\t2009\t1968\t125\t\t\t\tnull\t\tnull\tnull\t11102.85\nskoda\tfabia\t319198\t2003\t1896\t47\t\tman\t5\t5\t\tnull\tnull\t2294.6\nskoda\tyeti\t29056\t2015\t1200\t81\t\tman\t5\t5\t\tnull\tnull\t13323.46\nskoda\trapid\t12916\t2015\t1197\t63\t\tman\t5\t5\t\tnull\tnull\t10358.99\nskoda\tyeti\t24803\t2015\t1200\t81\t\tman\t5\t5\t\tnull\tnull\t12805.33\nvolkswagen\tsharan\t6013\t2015\t2000\t103\t\tman\t5\t7\t\tnull\tnull\t27757.22\nskoda\toctavia\t25634\t2015\t1200\t81\t\tauto\t5\t5\t\tnull\tnull\t15173.95\nskoda\tfabia\t168000\t2003\t1390\t55\t\tman\t5\t5\t\tnull\tnull\t15173.95\nskoda\tyeti\t23920\t2015\t2000\t110\t\tauto\t5\t5\t\tnull\tnull\t23205.03\nopel\tcorsa\t119000\t2006\t998\t44\t\tman\t3\t5\t\tnull\tnull\t23205.03\nskoda\trapid\t15500\t2015\t1598\t77\t\tman\t5\t5\t\tnull\tnull\t12213.18\naudi\tq3\t37588\t2013\t2000\t103\t\tman\t5\t5\t\tnull\tnull\t22205.77\nmitsubishi\tasx\t9\t2016\t1600\t86\t\tman\t5\t5\t\tnull\tnull\t14285.71\nmitsubishi\tasx\t6\t2016\t1600\t86\t\tman\t5\t5\t\tnull\tnull\t15544.04\nmazda\tcx-5\t104862\t2012\t2200\t129\t\tauto\t5\t5\t\tnull\tnull\t18134.72\nkia\tceed\t153200\t2008\t1582\t84\t\tman\t5\t5\t\tnull\tnull\t4811.25\nvolkswagen\tsharan\t6010\t2015\t2000\t103\t\tman\t5\t7\t\tnull\tnull\t27757.22\nmitsubishi\tasx\t6\t2016\t1600\t86\t\tman\t5\t5\t\tnull\tnull\t15544.04\nskoda\toctavia\t252536\t2009\t1968\t125\t\tauto\t5\t5\t\tnull\tnull\t7364.91\ncitroen\tc4-picasso\t174289\t2006\t1600\t80\t\tman\t5\t7\t\tnull\tnull\t5551.44\nchrysler\tpt-cruiser\t136439\t2003\t2100\t89\t\tman\t5\t5\t\tnull\tnull\t3330.87\nskoda\toctavia\t256735\t1999\t1900\t66\t\tman\t5\t5\t\tnull\tnull\t2516.65\nfiat\tpanda\t12754\t2011\t1100\t40\t\tman\t5\t5\t\tnull\tnull\t4663.21\nrenault\tclio\t87963\t2009\t1100\t57\t\tauto\t5\t5\t\tnull\tnull\t5366.4\nskoda\toctavia\t139316\t2006\t1600\t75\t\tman\t5\t5\t\tnull\tnull\t5070.32\ncitroen\tberlingo\t72305\t2010\t1600\t55\t\tman\t5\t5\t\tnull\tnull\t6032.57\nrenault\tmegane\t138231\t2003\t1400\t72\t\tman\t5\t5\t\tnull\tnull\t1702.44\nskoda\tfabia\t55826\t2010\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t6846.78\ncitroen\tc5\t176704\t2003\t2000\t100\t\tman\t5\t5\t\tnull\tnull\t2590.67\nskoda\troomster\t134421\t2008\t1900\t77\t\tman\t5\t5\t\tnull\tnull\t6661.73\ncitroen\txsara-picasso\t200000\t2002\t1997\t66\t\tman\t5\t5\t\tnull\tnull\t2017.02\ncitroen\tc4-picasso\t107278\t2011\t1600\t82\t\tauto\t5\t7\t\tnull\tnull\t9252.41\nrenault\tgrand-scenic\t119226\t2012\t1500\t81\t\tman\t5\t5\t\tnull\tnull\t8919.32\nskoda\toctavia\t197617\t2005\t1900\t77\t\tman\t5\t5\t\tnull\tnull\t5662.47\nopel\tcorsa\t10384\t2015\t1400\t74\t\tman\t5\t5\t\tnull\tnull\t13138.42\nskoda\troomster\t214861\t2010\t1600\t66\t\tman\t5\t5\t\tnull\tnull\t5921.54\naudi\tq5\t51386\t2009\t1968\t125\t\tauto\t5\t5\t\tnull\tnull\t20355.29\nskoda\tfabia\t29181\t2015\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t8512.21\nskoda\tfabia\t103297\t2010\t1400\t51\t\tman\t5\t5\t\tnull\tnull\t5958.55\nfiat\tstilo\t161000\t2003\t1910\t85\t\tman\t5\t5\t\tnull\tnull\t5958.55\nford\tgrand-c-max\t183000\t2013\t1997\t103\t\tauto\t5\t7\t\tnull\tnull\t5958.55\nskoda\tfabia\t140293\t2004\t1896\t96\t\tman\t5\t5\t\tnull\tnull\t5958.55\nopel\tcorsa\t25\t2016\t1199\t51\t\tman\t5\t5\t\tnull\tnull\t5958.55\nskoda\tfelicia\t76552\t2001\t1300\t50\t\tman\t5\t5\t\tnull\tnull\t1961.51\nrenault\tmegane\t141614\t2006\t1500\t78\t\tman\t5\t5\t\tnull\tnull\t3663.95\ntoyota\tauris\t48885\t2014\t1600\t97\t\tman\t5\t5\t\tnull\tnull\t12213.18\nvolkswagen\tgolf\t297330\t2005\t1968\t103\t\tman\t5\t5\t\tnull\tnull\t3849.0\nskoda\tfabia\t85761\t2007\t1400\t59\t\tman\t5\t5\t\tnull\tnull\t4663.21\nopel\tastra\t160000\t2003\t1598\t62\t\tman\t5\t5\t\tnull\tnull\t1924.5\nskoda\tsuperb\t18120\t2015\t1984\t162\t\tauto\t5\t5\t\tnull\tnull\t1924.5\nskoda\trapid\t10767\t2015\t1197\t63\t\tman\t5\t5\t\tnull\tnull\t10547.74\nrenault\tclio\t184076\t1998\t1149\t43\t\tman\t5\t5\t\tnull\tnull\t736.49\nopel\tmokka\t50\t2016\t1398\t103\t\tman\t5\t5\t\tnull\tnull\t736.49\nmercedes-benz\t\t16000\tnull\t1461\t80\t\tauto\t5\t5\t\tnull\tnull\t736.49\nskoda\toctavia\t41000\t2014\t1598\t77\t\tauto\t5\t5\t\tnull\tnull\t736.49\nopel\tmeriva\t97000\tnull\t1398\t74\t\tman\t5\t5\t\tnull\tnull\t736.49\nvolkswagen\tpassat\t220000\t2006\t1896\t77\t\tman\t5\t5\t\tnull\tnull\t4441.15\nskoda\tsuperb\t215000\t2006\t2496\t120\t\tauto\t\tnull\t\tnull\tnull\t7957.07\nmercedes-benz\tviano\t450000\t2006\t2148\t110\t\tman\t5\t8\t\tnull\tnull\t6624.72\nmercedes-benz\tviano\t280000\t2007\t2957\t150\t\tauto\t5\t6\t\tnull\tnull\t11473.06\ncitroen\tc4\t176850\t2013\t1397\t70\t\tman\t5\t5\t\tnull\tnull\t11473.06\nskoda\tyeti\t23587\t2015\t1197\t77\t\tman\t5\tnull\t\tnull\tnull\t13323.09\nmitsubishi\tl200\t283200\t2005\t2477\t85\t\tman\t4\t5\t\tnull\tnull\t7586.97\nskoda\toctavia\t257000\t2006\t1595\t75\t\tman\t5\tnull\t\tnull\tnull\t4256.11\nskoda\toctavia\t148552\t2013\t1968\t110\t\tauto\t5\tnull\t\tnull\tnull\t4256.11\nskoda\toctavia\t116112\t2011\t1197\t77\t\tman\t5\tnull\t\tnull\tnull\t4256.11\nskoda\tfabia\t218000\t2001\t1397\t44\t\tman\t5\t5\t\tnull\tnull\t1439.67\nskoda\tfabia\t174630\t2001\t1397\t50\t\tman\t5\t5\t\tnull\tnull\t1813.47\nskoda\tyeti\t13566\t2015\t1968\t81\t\tman\t5\tnull\t\tnull\tnull\t1813.47\nskoda\tsuperb\t20715\t2015\t1968\t140\t\tauto\t5\tnull\t\tnull\tnull\t38453.0\nford\tfocus\t184827\tnull\t1753\t74\t\tman\t\t5\t\tnull\tnull\t38453.0\nskoda\toctavia\t11952\t2015\t1395\t110\t\tman\t5\tnull\t\tnull\tnull\t38453.0\nskoda\tfabia\t99800\tnull\t1198\t47\t\tman\t5\t5\t\tnull\tnull\t38453.0\npeugeot\t508\t0\t2016\t1997\t110\t\tman\t\t5\t\tnull\tnull\t38453.0\nvolvo\txc90\t15000\t2015\t1969\t165\t\tauto\t5\t7\t\tnull\tnull\t38453.0\nskoda\tfabia\t38493\t2012\t1197\t63\t\tman\t5\tnull\t\tnull\tnull\t7364.91\nskoda\toctavia\t14670\t2015\t1598\t81\t\tman\t5\tnull\t\tnull\tnull\t7364.91\nskoda\toctavia\t168700\tnull\t1598\t55\t\tman\t5\t5\t\tnull\tnull\t1628.42\nrenault\tclio\t96625\t2009\t1100\t55\t\tman\t5\t5\t\tnull\tnull\t3700.96\nskoda\toctavia\t250000\tnull\t1968\t103\t\tman\t5\t5\t\tnull\tnull\t3700.96\nporsche\tcayenne\t147400\tnull\t3598\t213\t\tman\t5\t5\t\tnull\tnull\t3700.96\nseat\tibiza\t103500\tnull\t1390\t55\t\tman\t5\t5\t\tnull\tnull\t3700.96\nford\tfocus\t148000\t2006\t1800\t85\t\tman\t5\t5\t\tnull\tnull\t2553.66\nskoda\toctavia\t2799\t2015\t1598\t77\t\tman\t5\t5\t\tnull\tnull\t2553.66\nseat\tibiza\t64231\t2010\t1200\t51\t\tman\t5\t5\t\tnull\tnull\t4071.06\nskoda\toctavia\t17500\t2014\t1197\t77\t\tman\t5\tnull\t\tnull\tnull\t4071.06\nskoda\tfabia\t125200\t2007\t1200\t47\t\tman\t5\t5\t\tnull\tnull\t2590.67\nford\tfiesta\t149800\tnull\t1399\t50\t\tman\t5\t5\t\tnull\tnull\t2590.67\nmitsubishi\tasx\t16\t2016\t1600\t86\t\tman\t5\t5\t\tnull\tnull\t15544.04\nnissan\tqashqai\t16407\t2013\t1600\t86\t\tman\t5\t5\t\tnull\tnull\t11843.08\nskoda\trapid\t25562\t2015\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t11472.98\nmercedes-benz\t\t13199\t2013\t2100\t125\t\tauto\t4\t5\t\tnull\tnull\t29607.7\nford\tfocus\t170167\t1999\t1600\t74\t\tman\t5\t5\t\tnull\tnull\t999.26\npeugeot\t307\t181496\t2005\t1600\t80\t\tman\t5\t5\t\tnull\tnull\t2664.69\nskoda\tfabia\t192643\t2006\t1400\t51\t\tman\t5\t4\t\tnull\tnull\t2923.76\nmitsubishi\tasx\t15\t2016\t1600\t86\t\tman\t5\t5\t\tnull\tnull\t14285.71\npeugeot\t307\t219163\t2005\t2000\t66\t\tman\t5\t5\t\tnull\tnull\t1961.51\nfiat\tpunto\t102476\t2009\t1200\t48\t\tman\t3\t5\t\tnull\tnull\t3145.82\nskoda\troomster\t20589\t2015\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t12213.18\nkia\tsportage\t69162\t2013\t1600\t99\t\tman\t5\t5\t\tnull\tnull\t12398.22\nvolvo\txc90\t263333\t2010\t2400\t136\t\tman\t5\t7\t\tnull\tnull\t12953.37\nmitsubishi\tasx\t6\t2016\t1600\t86\t\tman\t5\t5\t\tnull\tnull\t14285.71\nhyundai\tix35\t47305\t2013\t1600\t99\t\tman\t5\t5\t\tnull\tnull\t13693.56\nvolkswagen\ttiguan\t120201\t2010\t2000\t103\t\tauto\t5\t5\t\tnull\tnull\t14137.68\ncitroen\txsara-picasso\t203165\t2002\t1700\t85\t\tman\t5\t5\t\tnull\tnull\t2035.53\nkia\tsorento\t101620\t2007\t2500\t125\t\tman\t5\t5\t\tnull\tnull\t7809.03\nnissan\tqashqai\t16398\t2013\t1600\t86\t\tman\t5\t5\t\tnull\tnull\t11843.08\ncitroen\tberlingo\t265915\t2010\t1600\t66\t\tman\t5\t5\t\tnull\tnull\t4478.16\nseat\tcordoba\t134098\t2002\t1400\t44\t\tman\t4\t5\t\tnull\tnull\t2220.58\nvolkswagen\ttouran\t131730\t2012\t1200\t77\t\tman\t5\t5\t\tnull\tnull\t11102.89\nskoda\tfabia\t80699\t2006\t1200\t47\t\tman\t4\t5\t\tnull\tnull\t3330.87\ncitroen\tberlingo\t148065\t2006\t1600\t66\t\tman\t5\t5\t\tnull\tnull\t3626.94\ncitroen\tberlingo\t98889\t2006\t1600\t80\t\tman\t5\t5\t\tnull\tnull\t3589.93\nmitsubishi\tasx\t7\t2016\t1600\t86\t\tman\t5\t5\t\tnull\tnull\t15544.04\nford\tgalaxy\t148404\t2004\t1900\t96\t\tman\t5\t7\t\tnull\tnull\t5033.31\nvolkswagen\tmultivan\t175666\t2007\t1900\t75\t\tman\t4\t5\t\tnull\tnull\t12953.37\nhyundai\t\t188013\t1999\t1000\t40\t\tman\t5\t5\t\tnull\tnull\t1036.27\nkia\tceed\t88769\t2008\t1400\t80\t\tman\t5\t5\t\tnull\tnull\t5181.35\nsmart\tfortwo\t74074\t2006\t700\t37\t\tauto\t3\t2\t\tnull\tnull\t3663.95\nkia\trio\t12772\t2015\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t9104.37\nskoda\tfabia\t57237\t2009\t1200\t51\t\tman\t5\t5\t\tnull\tnull\t5921.54\nskoda\toctavia\t44013\t2006\t1600\t75\t\tman\t5\t5\t\tnull\tnull\t7216.88\nfiat\tseicento\t54169\t2003\t1100\t40\t\tman\t3\t5\t\tnull\tnull\t1406.37\nskoda\trapid\t25553\t2015\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t11472.98\nskoda\troomster\t97962\t2008\t1400\t63\t\tman\t5\t5\t\tnull\tnull\t5403.4\nvolkswagen\tgolf-plus\t101501\t2009\t1600\t77\t\tman\t5\t5\t\tnull\tnull\t9696.52\nkia\tpicanto\t90708\t2006\t1000\t45\t\tman\t5\t4\t\tnull\tnull\t2775.72\nskoda\troomster\t20580\t2015\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t12213.18\nford\tfocus\t219108\t1999\t1600\t74\t\tman\t5\t5\t\tnull\tnull\t1480.38\nskoda\tfabia\t81999\t2007\t1200\t40\t\tman\t5\t5\t\tnull\tnull\t3700.96\nskoda\toctavia\t110282\t2010\t2000\t103\t\tman\t5\t5\t\tnull\tnull\t8882.31\nskoda\toctavia\t200131\t2006\t2000\t103\t\tauto\t5\t5\t\tnull\tnull\t6106.59\nskoda\tfabia\t85230\t2007\t1400\t51\t\tman\t5\t5\t\tnull\tnull\t5070.32\nskoda\toctavia\t116395\t2010\t2000\t103\t\tman\t5\t5\t\tnull\tnull\t9289.42\nvolkswagen\tgolf\t212401\t1992\t1781\t72\t\tman\t3\t4\t\tnull\tnull\t3145.82\n\t\t100831\t2007\t1500\t50\t\tman\t5\t7\t\tnull\tnull\t4441.15\nvolkswagen\tpolo\t12324\t2011\t1200\t44\t\tman\t5\t5\t\tnull\tnull\t8142.12\nbmw\t\t256000\t2007\t1998\t120\t\tman\t\t5\t\tnull\tnull\t8327.17\nhyundai\taccent\t69000\t2008\t1399\t71\t\tman\t4\t5\t\tnull\tnull\t4807.55\nvolkswagen\ttouran\t195000\t2003\t1598\t85\t\tman\t\tnull\t\tnull\tnull\t2586.97\nchrysler\tpt-cruiser\t121100\t2005\t2148\t89\t\tman\t5\t5\t\tnull\tnull\t2590.67\nrenault\tmodus\t133245\t2005\t1149\t55\t\tman\t5\t5\t\tnull\tnull\t2183.57\nvolvo\txc60\t93840\t2013\t2400\t158\t\tauto\t5\t5\t\tnull\tnull\t24611.4\nmercedes-benz\t\t109000\t2008\t2987\t165\t\tauto\t5\t5\t\tnull\tnull\t14766.84\nford\tfocus\t188245\t2000\t1596\t74\t\tman\t5\t5\t\tnull\tnull\t14766.84\nford\tfocus\t206000\t2007\t1560\t80\t\tman\t5\tnull\t\tnull\tnull\t3700.96\ntoyota\tyaris\t68000\t2012\t998\t51\t\tman\t5\t5\t\tnull\tnull\t6994.82\nmercedes-benz\t\t174166\t2009\t3498\t205\t\tauto\t\tnull\t\tnull\tnull\t6994.82\nvolkswagen\ttouareg\t174000\t2011\t2967\t176\t\tauto\t5\t5\t\tnull\tnull\t24759.4\nopel\tcorsa\t17100\t2014\t1229\t63\t\tman\t5\t5\t\tnull\tnull\t7216.88\ntoyota\trav4\t145000\tnull\t1998\t94\t\tman\t\tnull\t\tnull\tnull\t1850.44\ncitroen\tc4-picasso\t123601\t2011\t1560\t82\t\tman\t5\t7\t\tnull\tnull\t7364.91\npeugeot\t3008\t137148\t2012\t1997\t110\t\tman\t5\t5\t\tnull\tnull\t9585.49\nskoda\tsuperb\t135000\t2013\t1968\t125\t\tauto\t5\t5\t\tnull\tnull\t9585.49\nskoda\toctavia\t264629\t2008\t1896\t77\t\tauto\t5\t5\t\tnull\tnull\t9585.49\nskoda\tfelicia\t213000\tnull\t1289\t50\t\tman\t5\t5\t\tnull\tnull\t1119.54\nhonda\tcr-v\t33321\t2014\t1597\t88\t\tman\t5\t5\t\tnull\tnull\t21428.57\nskoda\toctavia\t225000\t2009\t1896\t77\t\tman\t5\t5\t\tnull\tnull\t7957.07\nskoda\toctavia\t263000\t2007\t1968\t103\t\tman\t5\t5\t\tnull\tnull\t4774.24\nmazda\t6\t218000\t2003\t1998\t89\t\t\t5\t5\t\tnull\tnull\t1628.42\nskoda\toctavia\t87200\t2013\t1598\t77\t\tman\t5\t5\t\tnull\tnull\t12213.18\nskoda\toctavia\t421000\tnull\t1896\t77\t\tman\t5\t5\t\tnull\tnull\t2920.06\nskoda\toctavia\t253000\t2001\t1896\t66\t\tman\t\t5\t\tnull\tnull\t2405.63\nbmw\t\t245000\t2008\t2497\t130\t\tauto\t\tnull\t\tnull\tnull\t8290.16\nvolkswagen\tpassat\t254000\t2007\t1968\t125\t\tman\t5\t5\t\tnull\tnull\t4737.23\nskoda\troomster\t190000\t2006\t1896\t77\t\tman\t5\t5\t\tnull\tnull\t4034.05\ntoyota\tland-cruiser\t194000\t2008\t4461\t195\t\tauto\t5\t5\t\tnull\tnull\t19948.19\nskoda\tsuperb\t236000\t2008\t1968\t103\t\tman\t4\t5\t\tnull\tnull\t10288.68\naudi\ts3\t103000\t2008\t1984\t195\t\tman\t3\t5\t\tnull\tnull\t10288.68\nrenault\tclio\t68000\t2007\t1149\t43\t\tman\t3\t4\t\tnull\tnull\t2146.56\nsmart\tfortwo\t106400\t2001\t599\t40\t\tauto\t2\t2\t\tnull\tnull\t2183.57\nskoda\tfabia\t148850\t2011\t1198\t51\t\tman\t5\t5\t\tnull\tnull\t5107.33\nseat\tibiza\t120000\t2009\t1390\t63\t\tman\t5\t5\t\tnull\tnull\t4811.25\nskoda\toctavia\t67200\t2013\t1968\t125\t\tauto\t5\t5\t\tnull\tnull\t11806.07\nhonda\tfr-v\t157600\t2007\t2204\t103\t\tman\t5\t6\t\tnull\tnull\t11806.07\nkia\tsportage\t130500\t2012\t1995\t100\t\tman\t5\t5\t\tnull\tnull\t14063.66\naudi\ta3\t223000\t2003\t1968\t103\t\tman\t3\t5\t\tnull\tnull\t4626.2\nskoda\toctavia\t254337\t2007\t1595\t75\t\tman\t5\t5\t\tnull\tnull\t3330.83\nmazda\tcx-7\t181572\t2007\t2261\t191\t\tman\t5\t5\t\tnull\tnull\t3330.83\naudi\tq7\t155642\t2009\t2967\t176\t\tauto\t5\t7\t\tnull\tnull\t22166.91\nnissan\tmurano\t190000\t2005\t3498\t172\t\tauto\t5\t5\t\tnull\tnull\t1772.76\nford\tfocus\t81500\t2012\t998\t92\t\tman\t\tnull\t\tnull\tnull\t10695.78\nmercedes-benz\t\t29900\t2007\t1699\t85\t\tauto\t5\t5\t\tnull\tnull\t9807.55\nford\tfocus\t142000\t2002\t1988\t127\t\tman\t3\t5\t\tnull\tnull\t3663.95\npeugeot\t407\t342000\t2004\t1560\t80\t\tman\t5\t5\t\tnull\tnull\t1924.5\nopel\tzafira\t183000\t2005\t1910\t74\t\tman\t5\t7\t\tnull\tnull\t1924.5\nhonda\tlegend\t241000\t1992\t3206\t151\t\tauto\t\tnull\t\tnull\tnull\t1665.43\nrenault\tespace\t230000\t2004\t2958\t130\t\tauto\t5\t5\t\tnull\tnull\t3515.91\nskoda\tyeti\t169028\t2010\t1998\t103\t\tman\t\t5\t\tnull\tnull\t10917.84\nchevrolet\tcorvette\t33700\t1994\t5733\t277\t\tauto\t2\t2\t\tnull\tnull\t20910.44\nrenault\tscenic\t217000\t1998\t1598\t66\t\tman\t5\t5\t\tnull\tnull\t666.17\ntoyota\tyaris\t196071\t2000\t998\t50\t\tman\t5\t3\t\tnull\tnull\t921.54\nskoda\tfabia\t161000\t2000\t1397\t50\t\tman\t5\t5\t\tnull\tnull\t1813.47\nvolkswagen\tpassat\t196500\t2007\t1968\t103\t\tman\t5\t5\t\tnull\tnull\t1813.47\nbmw\t\t234000\t2000\t1951\t100\t\tman\t4\t5\t\tnull\tnull\t2775.72\nvolkswagen\tpassat\t141230\t2013\t1968\t103\t\tauto\t5\t5\t\tnull\tnull\t13689.86\nseat\talhambra\t304200\tnull\t1896\t81\t\tman\t5\t7\t\tnull\tnull\t13689.86\nvolkswagen\tpassat\t204000\t2001\t1896\t96\t\tman\t4\t5\t\tnull\tnull\t3663.95\naudi\ta4\t407000\t1997\t1781\t110\t\tman\t4\t5\t\tnull\tnull\t1295.34\nskoda\tfabia\t240294\t2000\t1896\t74\t\tman\t5\t5\t\tnull\tnull\t1924.5\ncitroen\txsara\t314000\t1999\t1868\t51\t\tman\t5\t5\t\tnull\tnull\t629.16\npeugeot\t107\t92000\t2006\t998\t50\t\tauto\t5\t4\t\tnull\tnull\t3293.86\nskoda\tfabia\t155036\t2003\t1200\t47\t\tman\t5\t5\t\tnull\tnull\t1591.41\nskoda\tfabia\t127540\t2004\t1200\t40\t\tman\t5\t5\t\tnull\tnull\t2183.57\nskoda\tfabia\t234314\t2003\t1200\t47\t\tman\t5\t5\t\tnull\tnull\t1665.43\nford\tfocus\t199495\t2006\t1600\t66\t\tman\t5\t5\t\tnull\tnull\t2997.78\nskoda\toctavia\t253550\t2007\t1600\t75\t\tman\t5\t5\t\tnull\tnull\t2997.78\nskoda\tfabia\t294022\t2001\t1900\t74\t\tman\t5\t5\t\tnull\tnull\t1924.5\nskoda\tfabia\t121965\t2004\t1200\t47\t\tman\t5\t5\t\tnull\tnull\t2701.7\nskoda\tfabia\t84200\t2003\t1200\t40\t\tman\t5\t5\t\tnull\tnull\t2294.6\nporsche\tcayenne\t134098\t2008\t3600\t213\t\tauto\t5\t5\t\tnull\tnull\t16654.33\nnissan\tqashqai\t157322\t2010\t2000\t110\t\tman\t5\t7\t\tnull\tnull\t11102.89\nhyundai\tix35\t86817\t2012\t1600\t99\t\tman\t5\t5\t\tnull\tnull\t12583.27\nskoda\tfabia\t67000\t2005\t1200\t47\t\tman\t5\t5\t\tnull\tnull\t3108.81\nskoda\tfabia\t126900\t2001\t1400\t50\t\tman\t5\t5\t\tnull\tnull\t1480.38\nford\tfocus\t146742\t2008\t1600\t74\t\tman\t5\t5\t\tnull\tnull\t5218.36\nskoda\tfabia\t203949\t2004\t1200\t47\t\tman\t5\t5\t\tnull\tnull\t2072.54\nskoda\tsuperb\t181701\t2006\t2000\t103\t\tman\t4\t5\t\tnull\tnull\t4811.25\nskoda\tfabia\t222767\t2008\t1600\t77\t\tman\t5\t5\t\tnull\tnull\t4108.07\nmercedes-benz\t\t119899\t2003\t2700\t130\t\tauto\t4\t5\t\tnull\tnull\t6772.76\nskoda\tsuperb\t111291\t2006\t1900\t77\t\tman\t4\t5\t\tnull\tnull\t5366.4\ncitroen\tberlingo\t135562\t2007\t1400\t55\t\tman\t5\t5\t\tnull\tnull\t3441.89\nopel\tastra\t83691\t2011\t1400\t66\t\tman\t5\t5\t\tnull\tnull\t6772.76\nskoda\toctavia\t214173\t2011\t1600\t75\t\tman\t5\t5\t\tnull\tnull\t5921.54\nskoda\toctavia\t152298\t2012\t1600\t77\t\tman\t5\t5\t\tnull\tnull\t9400.44\nford\tmondeo\t175496\t2011\t2200\t147\t\tman\t5\t5\t\tnull\tnull\t10362.69\nskoda\tfabia\t22764\t2003\t1400\t50\t\tman\t5\t5\t\tnull\tnull\t3478.9\nskoda\tfabia\t22824\t2015\t1200\t66\t\tman\t5\t5\t\tnull\tnull\t11472.98\nvolkswagen\tgolf\t181862\t2013\t1600\t77\t\tman\t5\t5\t\tnull\tnull\t10362.69\nford\tfocus\t182112\t2011\t1600\t66\t\tman\t5\t5\t\tnull\tnull\t4811.25\nskoda\tfabia\t20240\t2015\t1200\t66\t\tman\t5\t5\t\tnull\tnull\t11769.06\nskoda\toctavia\t140606\t2009\t1800\t118\t\tman\t5\t5\t\tnull\tnull\t8364.17\nskoda\toctavia\t58165\t2015\t1600\t66\t\tman\t5\t5\t\tnull\tnull\t14137.68\nopel\tastra\t135388\t2005\t1800\t92\t\tman\t5\t5\t\tnull\tnull\t2960.77\nskoda\toctavia\t193309\t2006\t1900\t77\t\tauto\t5\t5\t\tnull\tnull\t6661.73\nvolkswagen\tpassat\t161547\t2013\t1600\t77\t\tauto\t5\t5\t\tnull\tnull\t12953.37\nford\tmondeo\t159755\t2004\t2200\t114\t\tman\t5\t5\t\tnull\tnull\t4071.06\nskoda\tfabia\t82378\t2012\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t8142.12\nskoda\tfabia\t6622\t2015\t1200\t66\t\tman\t5\t5\t\tnull\tnull\t11843.08\nskoda\tfabia\t20735\t2015\t1200\t66\t\tman\t5\t5\t\tnull\tnull\t11472.98\nford\tmondeo\t130197\t2001\t2000\t85\t\tman\t5\t5\t\tnull\tnull\t2886.75\nskoda\toctavia\t28904\t2015\t1200\t63\t\tman\t5\t5\t\tnull\tnull\t11843.08\npeugeot\t107\t58000\t2009\t1000\t50\t\tman\t5\t4\t\tnull\tnull\t3626.94\nford\tfocus\t79935\t2005\t1400\t59\t\tman\t5\t5\t\tnull\tnull\t3700.96\nchevrolet\torlando\t106563\t2013\t2000\t120\t\tman\t5\t7\t\tnull\tnull\t10362.69\nskoda\tfabia\t18311\t2015\t1200\t66\t\tman\t5\t5\t\tnull\tnull\t11843.08\ncitroen\tc4-picasso\t142558\t2008\t1600\t80\t\tauto\t5\t7\t\tnull\tnull\t6291.64\ncitroen\tberlingo\t78879\t2008\t1600\t80\t\tman\t5\t5\t\tnull\tnull\t5995.56\nskoda\tfabia\t11886\t2015\t1200\t66\t\tman\t5\t5\t\tnull\tnull\t11843.08\nskoda\tfabia\t11347\t2015\t1200\t81\t\tman\t5\t5\t\tnull\tnull\t12065.14\nford\tkuga\t12000\t2012\t1997\t103\t\tman\t5\t5\t\tnull\tnull\t13508.51\nskoda\tfabia\t17306\t2015\t1200\t66\t\tman\t5\t5\t\tnull\tnull\t10954.85\nskoda\toctavia\t89306\t2000\t1600\t74\t\tman\t5\t5\t\tnull\tnull\t2257.59\nskoda\tfabia\t11323\t2015\t1200\t66\t\tman\t5\t5\t\tnull\tnull\t11843.08\nskoda\toctavia\t178494\t2003\t1595\t75\t\tman\t5\t5\t\tnull\tnull\t11843.08\nfiat\tulysse\t116282\tnull\t1998\t97\t\t\t5\t6\t\tnull\tnull\t1846.78\ncitroen\tberlingo\t249512\tnull\t1761\t66\t\t\t5\t5\t\tnull\tnull\t1846.78\nskoda\toctavia\t19500\t2011\t1197\t77\t\tman\t5\t5\t\tnull\tnull\t10177.61\nvolkswagen\tpassat\t248000\t2011\t1968\t125\t\tauto\t4\t5\t\tnull\tnull\t11806.07\nvolvo\tc30\t135000\t2010\t1560\t84\t\tman\t3\t4\t\tnull\tnull\t11806.07\nvolkswagen\ttouareg\t284500\t2005\t3189\t177\t\tauto\t5\tnull\t\tnull\tnull\t5884.53\nford\tgalaxy\t186000\t2011\t1997\t120\t\tman\t5\t7\t\tnull\tnull\t11065.91\nopel\tastra\t186000\t2003\t1598\t76\t\tman\t5\t5\t\tnull\tnull\t2035.53\nvolkswagen\tgolf\t110000\t2004\t1400\t55\t\tman\t5\t5\t\tnull\tnull\t4774.24\nrenault\tscenic\t143000\t1998\t1870\t72\t\tman\t5\t5\t\tnull\tnull\t1665.43\nfiat\tpanda\t76737\tnull\t1108\t40\t\tman\t5\t5\t\tnull\tnull\t2216.88\nnissan\tx-trail\t130000\t2009\t1995\t110\t\tman\t5\t5\t\tnull\tnull\t9248.67\nrenault\tmegane\t138779\tnull\t1598\t79\t\t\t5\t5\t\tnull\tnull\t9248.67\nvolvo\tv70\t258000\t2005\t2401\t136\t\tman\t5\t5\t\tnull\tnull\t9248.67\nvolkswagen\tgolf\t184400\tnull\t1390\t59\t\tman\t5\t5\t\tnull\tnull\t6254.63\nvolvo\ts60\t325000\t2002\t2401\t120\t\tman\t4\t5\t\tnull\tnull\t2957.07\nvolkswagen\tsharan\t199870\t2008\t1896\t85\t\tman\t5\t7\t\tnull\tnull\t9252.04\nbmw\t\t251000\t2006\t2993\t170\t\tauto\t\t5\t\tnull\tnull\t9252.04\nsmart\tfortwo\t220000\t2002\t599\t40\t\tauto\t2\t2\t\tnull\tnull\t9252.04\nmini\tcooper\t14900\t2016\t1499\t100\t\t\t\tnull\t\tnull\tnull\t9252.04\npeugeot\t308\t0\t2016\t1199\t96\t\tauto\t5\t5\t\tnull\tnull\t9252.04\nmini\tcooper\t4900\t2016\t1499\t100\t\t\t\tnull\t\tnull\tnull\t9252.04\nskoda\toctavia\t4900\t2016\t1998\t169\t\t\t\tnull\t\tnull\tnull\t9252.04\nmercedes-benz\t\t215000\t2006\t2987\t165\t\tauto\t4\t5\t\tnull\tnull\t7401.55\ncitroen\tc3\t184000\t2004\t1400\t54\t\t\t5\t5\t\tnull\tnull\t7401.55\nskoda\toctavia\t184484\t2005\t1968\t103\t\tauto\t5\t5\t\tnull\tnull\t5847.52\nrenault\tlaguna\t150000\t2004\t1870\t88\t\tman\t\tnull\t\tnull\tnull\t1665.43\npeugeot\t407\t162679\tnull\t1997\t100\t\tman\t5\t5\t\tnull\tnull\t3663.58\nmini\tcountryman\t87200\t2014\t1995\t105\t\tman\t4\t5\t\tnull\tnull\t3663.58\npeugeot\t206\t135500\tnull\t1398\t50\t\tman\t5\t5\t\tnull\tnull\t2590.3\nvolvo\tv70\t429123\t1997\t2435\t142\t\tman\t5\t5\t\tnull\tnull\t962.21\nskoda\trapid\t52696\t2014\t1598\t77\t\tman\t4\t5\t\tnull\tnull\t962.21\nford\tkuga\t128100\t2011\t1997\t103\t\tman\t5\t5\t\tnull\tnull\t962.21\nvolvo\tv50\t240040\t2007\t1997\t100\t\tman\t5\t5\t\tnull\tnull\t962.21\naudi\ta3\t228357\t2007\t1968\t103\t\tman\t5\t5\t\tnull\tnull\t962.21\nskoda\troomster\t162000\t2007\t1390\t63\t\tman\t5\t5\t\tnull\tnull\t962.21\nopel\tvectra\t293140\t1998\t1995\t60\t\tman\t5\t5\t\tnull\tnull\t736.49\nvolkswagen\tpolo\t35000\t2008\t1198\t44\t\tman\t5\t5\t\tnull\tnull\t736.49\nvolkswagen\tsharan\t233000\t2001\t1896\t85\t\tman\t5\t5\t\tnull\tnull\t3626.94\nmazda\t6\t147500\t2008\t1998\t103\t\tman\t4\t5\t\tnull\tnull\t6994.82\nhyundai\tgetz\t102189\t2006\t1399\t71\t\tman\t5\t5\t\tnull\tnull\t2957.07\ntoyota\tauris\t140000\t2008\t1364\t66\t\tman\t5\t5\t\tnull\tnull\t4807.55\nhyundai\ti10\t59204\t2008\t1248\t57\t\tman\t5\t5\t\tnull\tnull\t3327.17\nbmw\t\t300000\t1996\t2793\t142\t\tman\t4\t5\t\tnull\tnull\t2294.6\nvolvo\ts80\t247463\t2008\t2400\t136\t\t\t\t5\t\tnull\tnull\t2294.6\naudi\ta5\t140774\t2012\t1968\t125\t\t\t\t5\t\tnull\tnull\t2294.6\nsuzuki\tsx4\t102698\tnull\t1586\t79\t\tman\t5\t5\t\tnull\tnull\t2294.6\nchrysler\t200\t246427\t2008\t2987\t160\t\t\t\t5\t\tnull\tnull\t9622.5\nopel\tinsignia\t97458\t2012\t1956\t118\t\t\t\t5\t\tnull\tnull\t9622.5\nmercedes-benz\t115\t65298\t2013\t1796\t80\t\t\t\t5\t\tnull\tnull\t18134.68\nmazda\t6\t167000\tnull\t1998\t89\t\tman\t\tnull\t\tnull\tnull\t18134.68\nford\tfocus\t50596\tnull\t1596\t110\t\tman\t5\t5\t\tnull\tnull\t11065.88\npeugeot\t307\t121146\tnull\t1587\t80\t\tman\t5\t5\t\tnull\tnull\t11065.88\nskoda\toctavia\t138512\tnull\t1896\t77\t\tman\t5\t5\t\tnull\tnull\t11065.88\nskoda\toctavia\t135616\t2013\t1968\t103\t\tauto\t5\t5\t\tnull\tnull\t11065.88\nsuzuki\tsx4\t54000\t2009\t1586\t79\t\tman\t5\t5\t\tnull\tnull\t11065.88\nvolkswagen\tpassat\t329000\tnull\t1896\t96\t\tman\t5\t5\t\tnull\tnull\t2590.64\nvolkswagen\tpassat\t269500\tnull\t1781\t110\t\tman\t5\t5\t\tnull\tnull\t2590.64\nskoda\toctavia\t217125\t2002\t1896\t81\t\tman\t5\t5\t\tnull\tnull\t2590.64\nskoda\toctavia\t207574\t2008\t1896\t77\t\tman\t5\t5\t\tnull\tnull\t2590.64\nvolkswagen\tgolf\t192000\t2000\t1598\t74\t\tman\t3\t5\t\tnull\tnull\t1480.35\nskoda\tfabia\t10\t2016\t1197\t81\t\tman\t5\t5\t\tnull\tnull\t15507.03\ncitroen\tberlingo\t284474\t2004\t1997\t66\t\tman\t5\t5\t\tnull\tnull\t2905.26\nseat\talhambra\t255643\t1999\t1986\t81\t\tman\t5\t7\t\tnull\tnull\t2035.53\nrenault\tscenic\t170000\tnull\t1390\t70\t\tman\t5\t5\t\tnull\tnull\t2035.53\ncitroen\txsara-picasso\t159714\t2009\t1560\t66\t\tman\t5\t5\t\tnull\tnull\t3497.41\nskoda\tfabia\t114984\t2009\t1198\t44\t\tman\t5\t5\t\tnull\tnull\t3497.41\nkia\tceed\t93360\t2008\t1396\t80\t\tman\t5\t5\t\tnull\tnull\t4807.55\nvolkswagen\tpassat\t246900\t1997\t1896\t66\t\tman\t5\t5\t\tnull\tnull\t1665.43\npeugeot\t206\t147800\t2005\t1587\t80\t\t\t\tnull\t\tnull\tnull\t2846.04\nsuzuki\tsx4\t56450\t2011\t1586\t88\t\tman\t5\t5\t\tnull\tnull\t10695.78\nskoda\toctavia\t186080\tnull\t1968\t103\t\tman\t5\t5\t\tnull\tnull\t10325.68\naudi\ta6\t234400\tnull\t2773\t150\t\tauto\t4\t5\t\tnull\tnull\t10325.68\nmitsubishi\tcolt\t173000\t1998\t1299\t55\t\tman\t3\t5\t\tnull\tnull\t925.24\ncitroen\txsara-picasso\t150230\t2005\t1749\t85\t\tman\t5\t5\t\tnull\tnull\t3145.82\nskoda\tsuperb\t264758\t2011\t1968\t103\t\tauto\t5\t5\t\tnull\tnull\t11843.08\nvolkswagen\tgolf\t99000\tnull\t1598\t77\t\tman\t5\t5\t\tnull\tnull\t9437.45\nchrysler\tpt-cruiser\t140289\t2004\t2148\t89\t\tman\t5\t5\t\tnull\tnull\t2886.75\nvolkswagen\ttransporter\t310000\t2004\t2461\t96\t\tman\t4\t9\t\tnull\tnull\t4996.3\nmercedes-benz\t\t316000\t1998\t3199\t165\t\tauto\t4\t5\t\tnull\tnull\t1406.37\nrenault\tscenic\t121551\t2001\t1783\t85\t\tman\t5\t5\t\tnull\tnull\t2146.56\nchrysler\tpt-cruiser\t201000\t2003\t2148\t89\t\tman\t5\t5\t\tnull\tnull\t1106.59\nnissan\tmicra\t81000\t2001\t1348\t60\t\tman\t5\t5\t\tnull\tnull\t1332.35\nbmw\t\t195000\t2006\t1995\t95\t\tman\t4\t5\t\tnull\tnull\t6287.93\nrenault\tmodus\t55951\t2011\t1149\t55\t\tman\t5\t5\t\tnull\tnull\t6287.93\nmitsubishi\toutlander\t1\t2016\t1998\t110\t\tauto\t5\t5\t\tnull\tnull\t6287.93\nvolkswagen\tgolf\t224000\t2006\t1896\t77\t\tman\t5\t5\t\tnull\tnull\t5551.44\nskoda\toctavia\t215963\t2010\t1598\t77\t\tman\t5\t5\t\tnull\tnull\t7316.77\nford\tmondeo\t170000\t2010\t2179\t147\t\tman\t5\t5\t\tnull\tnull\t12024.43\nbmw\t\t300000\t1986\t3500\tnull\t\tman\t4\t4\t\tnull\tnull\t2878.5\naudi\ts5\t164781\tnull\t4163\t260\t\tman\t2\t4\t\tnull\tnull\t2878.5\nskoda\tsuperb\t128333\t2013\t3597\t191\t\t\t\t5\t\tnull\tnull\t2878.5\nopel\tinsignia\t65240\t2012\t1956\t118\t\t\t\t5\t\tnull\tnull\t12213.18\nskoda\tfelicia\t103202\tnull\t1289\t50\t\tman\t5\t5\t\tnull\tnull\t12213.18\nvolvo\ts80\t599588\tnull\t2435\t147\t\tauto\t2\t5\t\tnull\tnull\t4071.06\npeugeot\t307\t135648\tnull\t1587\t80\t\tman\t5\t7\t\tnull\tnull\t3142.12\nskoda\toctavia\t17295\t2015\t1390\t81\t\tman\t5\t5\t\tnull\tnull\t19948.19\nrenault\tmegane\t257000\t2005\t1390\t72\t\tman\t5\t5\t\tnull\tnull\t2923.76\nrover\tfreelander\t145000\tnull\t1951\t82\t\tman\t5\t5\t\tnull\tnull\t4404.15\nskoda\tfabia\t132059\tnull\t1397\t50\t\tman\t5\t5\t\tnull\tnull\t2738.71\nkia\tpicanto\t120000\t2005\t1086\t47\t\tman\t5\t5\t\tnull\tnull\t2216.88\nfiat\tpunto\t76000\t2000\t1242\t63\t\tman\t2\t4\t\tnull\tnull\t822.43\nopel\tmeriva\t142000\tnull\t1598\t74\t\tman\t5\t5\t\tnull\tnull\t2957.07\nchevrolet\tmatiz\t121000\tnull\t796\t38\t\t\t5\t5\t\tnull\tnull\t666.17\ntoyota\trav4\t166000\tnull\t2231\t130\t\tauto\t5\t5\t\tnull\tnull\t666.17\nkia\tsportage\t163000\tnull\t2656\t129\t\tauto\t5\t5\t\tnull\tnull\t666.17\nhyundai\ti40\t24459\tnull\t1685\t100\t\tauto\t4\t5\t\tnull\tnull\t666.17\nskoda\toctavia\t96265\t2010\t1896\t77\t\tman\t5\t5\t\tnull\tnull\t9248.7\nvolkswagen\tgolf\t164905\tnull\t1390\t55\t\tman\t5\t5\t\tnull\tnull\t2031.83\nhyundai\ti30\t4800\t2016\t1598\t88\t\tman\t5\t5\t\tnull\tnull\t11247.22\ntoyota\tyaris\t87000\tnull\t998\t51\t\t\t5\t5\t\tnull\tnull\t5399.7\nfiat\tpunto\t92177\tnull\t1242\t44\t\tman\t5\t5\t\tnull\tnull\t1665.43\nbmw\tx6\t180000\tnull\t2993\t173\t\tauto\t5\t4\t\tnull\tnull\t25351.59\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708988675300_1808430153",
+      "id": "paragraph_1708988675300_1808430153",
+      "dateCreated": "2024-02-26T23:04:35+0000",
+      "dateStarted": "2024-02-27T01:02:24+0000",
+      "dateFinished": "2024-02-27T01:02:24+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:124329"
+    },
+    {
+      "text": "%hive\nCREATE TABLE usedcars_new AS\nSELECT\n  maker,\n  model,\n  mileage,\n  manufacture_year,\n  engine_displacement,\n  engine_power,\n  stk_year,\n  transmission,\n  door_count,\n  seat_count,\n  fuel_type,\n  date_created,\n  date_last_seen,\n  price_eur\nFROM cars;\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-26T23:07:08+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "INFO  : Compiling command(queryId=hive_20240226230708_d1d37511-c670-4f37-85d6-ab384005a79b): \nCREATE TABLE usedcars_new AS\nSELECT\n  maker,\n  model,\n  mileage,\n  manufacture_year,\n  engine_displacement,\n  engine_power,\n  stk_year,\n  transmission,\n  door_count,\n  seat_count,\n  fuel_type,\n  date_created,\n  date_last_seen,\n  price_eur\nFROM cars\nINFO  : Concurrency mode is disabled, not creating a lock manager\nINFO  : Semantic Analysis Completed (retrial = false)\nINFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:maker, type:string, comment:null), FieldSchema(name:model, type:string, comment:null), FieldSchema(name:mileage, type:int, comment:null), FieldSchema(name:manufacture_year, type:int, comment:null), FieldSchema(name:engine_displacement, type:int, comment:null), FieldSchema(name:engine_power, type:int, comment:null), FieldSchema(name:stk_year, type:int, comment:null), FieldSchema(name:transmission, type:string, comment:null), FieldSchema(name:door_count, type:int, comment:null), FieldSchema(name:seat_count, type:int, comment:null), FieldSchema(name:fuel_type, type:string, comment:null), FieldSchema(name:date_created, type:timestamp, comment:null), FieldSchema(name:date_last_seen, type:timestamp, comment:null), FieldSchema(name:price_eur, type:double, comment:null)], properties:null)\nINFO  : Completed compiling command(queryId=hive_20240226230708_d1d37511-c670-4f37-85d6-ab384005a79b); Time taken: 0.338 seconds\nINFO  : Concurrency mode is disabled, not creating a lock manager\nINFO  : Executing command(queryId=hive_20240226230708_d1d37511-c670-4f37-85d6-ab384005a79b): \nCREATE TABLE usedcars_new AS\nSELECT\n  maker,\n  model,\n  mileage,\n  manufacture_year,\n  engine_displacement,\n  engine_power,\n  stk_year,\n  transmission,\n  door_count,\n  seat_count,\n  fuel_type,\n  date_created,\n  date_last_seen,\n  price_eur\nFROM cars\nINFO  : Query ID = hive_20240226230708_d1d37511-c670-4f37-85d6-ab384005a79b\nINFO  : Total jobs = 1\nINFO  : Launching Job 1 out of 1\nINFO  : Starting task [Stage-1:MAPRED] in serial mode\nINFO  : Subscribed to counters: [] for queryId: hive_20240226230708_d1d37511-c670-4f37-85d6-ab384005a79b\nINFO  : Tez session hasn't been created yet. Opening session\n\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : -1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708988704903_1668819633",
+      "id": "paragraph_1708988704903_1668819633",
+      "dateCreated": "2024-02-26T23:05:04+0000",
+      "dateStarted": "2024-02-26T23:07:08+0000",
+      "dateFinished": "2024-02-26T23:07:46+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:124330"
+    },
+    {
+      "text": "%hive\nSELECT count(*) from used_cars ",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-27T00:35:08+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "_c0": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          },
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "_c0": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "INFO  : Compiling command(queryId=hive_20240227003442_60a8fc81-a72b-40ef-bc7c-a7b686fe6459): \nSELECT count(*) from used_cars \nINFO  : Concurrency mode is disabled, not creating a lock manager\nINFO  : Semantic Analysis Completed (retrial = false)\nINFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:_c0, type:bigint, comment:null)], properties:null)\nINFO  : Completed compiling command(queryId=hive_20240227003442_60a8fc81-a72b-40ef-bc7c-a7b686fe6459); Time taken: 0.441 seconds\nINFO  : Concurrency mode is disabled, not creating a lock manager\nINFO  : Executing command(queryId=hive_20240227003442_60a8fc81-a72b-40ef-bc7c-a7b686fe6459): \nSELECT count(*) from used_cars \nINFO  : Query ID = hive_20240227003442_60a8fc81-a72b-40ef-bc7c-a7b686fe6459\nINFO  : Total jobs = 1\nINFO  : Launching Job 1 out of 1\nINFO  : Starting task [Stage-1:MAPRED] in serial mode\nINFO  : Subscribed to counters: [] for queryId: hive_20240227003442_60a8fc81-a72b-40ef-bc7c-a7b686fe6459\nINFO  : Tez session hasn't been created yet. Opening session\n"
+          },
+          {
+            "type": "TABLE",
+            "data": "_c0\n3552913\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708988828726_1288995014",
+      "id": "paragraph_1708988828726_1288995014",
+      "dateCreated": "2024-02-26T23:07:08+0000",
+      "dateStarted": "2024-02-27T00:34:41+0000",
+      "dateFinished": "2024-02-27T00:35:07+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:124331"
+    },
+    {
+      "text": "%hive\nSELECT COUNT(*) \nFROM used_cars\nWHERE manufacture_year BETWEEN 2000 AND 2017\n  AND maker IS NOT NULL\n  AND model IS NOT NULL\n  AND price_eur BETWEEN 3000 AND 2000000;\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-27T00:35:29+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "_c0": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "INFO  : Compiling command(queryId=hive_20240227003529_00551195-657b-457f-80bf-43ac858fbba9): \nSELECT COUNT(*) \nFROM used_cars\nWHERE manufacture_year BETWEEN 2000 AND 2017\n  AND maker IS NOT NULL\n  AND model IS NOT NULL\n  AND price_eur BETWEEN 3000 AND 2000000\nINFO  : Concurrency mode is disabled, not creating a lock manager\nINFO  : Semantic Analysis Completed (retrial = false)\nINFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:_c0, type:bigint, comment:null)], properties:null)\nINFO  : Completed compiling command(queryId=hive_20240227003529_00551195-657b-457f-80bf-43ac858fbba9); Time taken: 0.121 seconds\nINFO  : Concurrency mode is disabled, not creating a lock manager\nINFO  : Executing command(queryId=hive_20240227003529_00551195-657b-457f-80bf-43ac858fbba9): \nSELECT COUNT(*) \nFROM used_cars\nWHERE manufacture_year BETWEEN 2000 AND 2017\n  AND maker IS NOT NULL\n  AND model IS NOT NULL\n  AND price_eur BETWEEN 3000 AND 2000000\nINFO  : Query ID = hive_20240227003529_00551195-657b-457f-80bf-43ac858fbba9\nINFO  : Total jobs = 1\nINFO  : Launching Job 1 out of 1\nINFO  : Starting task [Stage-1:MAPRED] in serial mode\nINFO  : Subscribed to counters: [] for queryId: hive_20240227003529_00551195-657b-457f-80bf-43ac858fbba9\nINFO  : Tez session hasn't been created yet. Opening session\n"
+          },
+          {
+            "type": "TABLE",
+            "data": "_c0\n2046592\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708989116661_1879794839",
+      "id": "paragraph_1708989116661_1879794839",
+      "dateCreated": "2024-02-26T23:11:56+0000",
+      "dateStarted": "2024-02-27T00:35:29+0000",
+      "dateFinished": "2024-02-27T00:36:09+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:124332"
+    },
+    {
+      "text": "%hive\nSELECT maker,\n       model,\n       AVG(price_eur) AS average_price\nFROM used_cars\nWHERE manufacture_year BETWEEN 2000 AND 2017\n  AND maker IS NOT NULL\n  AND model IS NOT NULL\n  AND price_eur BETWEEN 3000 AND 2000000\nGROUP BY maker, model\nORDER BY average_price DESC\nLIMIT 10;\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-27T00:37:05+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "maker": "string",
+                      "model": "string",
+                      "average_price": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "INFO  : Compiling command(queryId=hive_20240227003705_eeac2778-85ba-48b5-aa7b-ef426f395145): \nSELECT maker,\n       model,\n       AVG(price_eur) AS average_price\nFROM used_cars\nWHERE manufacture_year BETWEEN 2000 AND 2017\n  AND maker IS NOT NULL\n  AND model IS NOT NULL\n  AND price_eur BETWEEN 3000 AND 2000000\nGROUP BY maker, model\nORDER BY average_price DESC\nLIMIT 10\nINFO  : Concurrency mode is disabled, not creating a lock manager\nINFO  : Semantic Analysis Completed (retrial = false)\nINFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:maker, type:string, comment:null), FieldSchema(name:model, type:string, comment:null), FieldSchema(name:average_price, type:double, comment:null)], properties:null)\nINFO  : Completed compiling command(queryId=hive_20240227003705_eeac2778-85ba-48b5-aa7b-ef426f395145); Time taken: 0.13 seconds\nINFO  : Concurrency mode is disabled, not creating a lock manager\nINFO  : Executing command(queryId=hive_20240227003705_eeac2778-85ba-48b5-aa7b-ef426f395145): \nSELECT maker,\n       model,\n       AVG(price_eur) AS average_price\nFROM used_cars\nWHERE manufacture_year BETWEEN 2000 AND 2017\n  AND maker IS NOT NULL\n  AND model IS NOT NULL\n  AND price_eur BETWEEN 3000 AND 2000000\nGROUP BY maker, model\nORDER BY average_price DESC\nLIMIT 10\nINFO  : Query ID = hive_20240227003705_eeac2778-85ba-48b5-aa7b-ef426f395145\nINFO  : Total jobs = 1\nINFO  : Launching Job 1 out of 1\nINFO  : Starting task [Stage-1:MAPRED] in serial mode\nINFO  : Subscribed to counters: [] for queryId: hive_20240227003705_eeac2778-85ba-48b5-aa7b-ef426f395145\nINFO  : Tez session hasn't been created yet. Opening session\n"
+          },
+          {
+            "type": "TABLE",
+            "data": "maker\tmodel\taverage_price\nlamborghini\taventador\t365960.994212963\nporsche\tcarrera-gt\t302045.21671102336\nbmw\tz8\t245118.60092905405\nlamborghini\t\t213291.6158794438\ntesla\troadster\t192880.27864583334\ntesla\tmodel-x\t176418.31510416666\nbentley\t\t166650.14732314035\nbentley\tbrooklands\t138501.303125\nrolls-royce\twraith\t137663.46354166666\nbentley\tcontinental-gtc\t129138.87838541667\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708988870574_1802202900",
+      "id": "paragraph_1708988870574_1802202900",
+      "dateCreated": "2024-02-26T23:07:50+0000",
+      "dateStarted": "2024-02-27T00:37:05+0000",
+      "dateFinished": "2024-02-27T00:37:40+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:124333"
+    },
+    {
+      "text": "%hive\nSELECT maker, model, AVG(price_eur) AS average_price\nFROM used_cars\nWHERE manufacture_year BETWEEN 2000 AND 2017\n  AND maker IS NOT NULL\n  AND model IS NOT NULL\n  AND price_eur BETWEEN 3000 AND 2000000\nGROUP BY maker, model\nORDER BY average_price ASC\nLIMIT 10;",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-27T00:37:57+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "maker": "string",
+                      "model": "string",
+                      "average_price": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "INFO  : Compiling command(queryId=hive_20240227003757_a303b1b2-87a5-4d8a-bd8e-0f77cd48336d): \nSELECT maker, model, AVG(price_eur) AS average_price\nFROM used_cars\nWHERE manufacture_year BETWEEN 2000 AND 2017\n  AND maker IS NOT NULL\n  AND model IS NOT NULL\n  AND price_eur BETWEEN 3000 AND 2000000\nGROUP BY maker, model\nORDER BY average_price ASC\nLIMIT 10\nINFO  : Concurrency mode is disabled, not creating a lock manager\nINFO  : Semantic Analysis Completed (retrial = false)\nINFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:maker, type:string, comment:null), FieldSchema(name:model, type:string, comment:null), FieldSchema(name:average_price, type:double, comment:null)], properties:null)\nINFO  : Completed compiling command(queryId=hive_20240227003757_a303b1b2-87a5-4d8a-bd8e-0f77cd48336d); Time taken: 0.129 seconds\nINFO  : Concurrency mode is disabled, not creating a lock manager\nINFO  : Executing command(queryId=hive_20240227003757_a303b1b2-87a5-4d8a-bd8e-0f77cd48336d): \nSELECT maker, model, AVG(price_eur) AS average_price\nFROM used_cars\nWHERE manufacture_year BETWEEN 2000 AND 2017\n  AND maker IS NOT NULL\n  AND model IS NOT NULL\n  AND price_eur BETWEEN 3000 AND 2000000\nGROUP BY maker, model\nORDER BY average_price ASC\nLIMIT 10\nINFO  : Query ID = hive_20240227003757_a303b1b2-87a5-4d8a-bd8e-0f77cd48336d\nINFO  : Total jobs = 1\nINFO  : Launching Job 1 out of 1\nINFO  : Starting task [Stage-1:MAPRED] in serial mode\nINFO  : Subscribed to counters: [] for queryId: hive_20240227003757_a303b1b2-87a5-4d8a-bd8e-0f77cd48336d\nINFO  : Tez session hasn't been created yet. Opening session\n"
+          },
+          {
+            "type": "TABLE",
+            "data": "maker\tmodel\taverage_price\nskoda\tgalaxy\t3071.800048828125\nrover\tstreetwise\t3187.8466796875\nkia\tretona\t3200.2542898995534\nbmw\ttransit\t3290.159912109375\nchevrolet\talero\t3305.3701171875\nhyundai\tsantamo\t3391.010009765625\nopel\tkadett\t3405.47998046875\nfiat\t128\t3460.39990234375\nnissan\tfrontier\t3478.905029296875\nseat\tinca\t3498.6566569010415\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708988903055_1315639271",
+      "id": "paragraph_1708988903055_1315639271",
+      "dateCreated": "2024-02-26T23:08:23+0000",
+      "dateStarted": "2024-02-27T00:37:57+0000",
+      "dateFinished": "2024-02-27T00:38:32+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:124334"
+    },
+    {
+      "text": "%hive\nSELECT maker,\n       model,\n       AVG(price_eur) AS average_price\nFROM used_cars\nWHERE manufacture_year BETWEEN 2000 AND 2017\n  AND maker IS NOT NULL\n  AND model IS NOT NULL\n  AND price_eur BETWEEN 3000 AND 2000000\nGROUP BY maker, model\nORDER BY average_price ASC\nLIMIT 10;\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-27T00:38:17+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "maker": "string",
+                      "model": "string",
+                      "average_price": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "INFO  : Compiling command(queryId=hive_20240227003818_85b5ca66-f3f7-4174-ad0a-bcbbbe4f0458): \nSELECT maker,\n       model,\n       AVG(price_eur) AS average_price\nFROM used_cars\nWHERE manufacture_year BETWEEN 2000 AND 2017\n  AND maker IS NOT NULL\n  AND model IS NOT NULL\n  AND price_eur BETWEEN 3000 AND 2000000\nGROUP BY maker, model\nORDER BY average_price ASC\nLIMIT 10\nINFO  : Concurrency mode is disabled, not creating a lock manager\nINFO  : Semantic Analysis Completed (retrial = false)\nINFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:maker, type:string, comment:null), FieldSchema(name:model, type:string, comment:null), FieldSchema(name:average_price, type:double, comment:null)], properties:null)\nINFO  : Completed compiling command(queryId=hive_20240227003818_85b5ca66-f3f7-4174-ad0a-bcbbbe4f0458); Time taken: 0.123 seconds\nINFO  : Concurrency mode is disabled, not creating a lock manager\nINFO  : Executing command(queryId=hive_20240227003818_85b5ca66-f3f7-4174-ad0a-bcbbbe4f0458): \nSELECT maker,\n       model,\n       AVG(price_eur) AS average_price\nFROM used_cars\nWHERE manufacture_year BETWEEN 2000 AND 2017\n  AND maker IS NOT NULL\n  AND model IS NOT NULL\n  AND price_eur BETWEEN 3000 AND 2000000\nGROUP BY maker, model\nORDER BY average_price ASC\nLIMIT 10\nINFO  : Query ID = hive_20240227003818_85b5ca66-f3f7-4174-ad0a-bcbbbe4f0458\nINFO  : Total jobs = 1\nINFO  : Launching Job 1 out of 1\nINFO  : Starting task [Stage-1:MAPRED] in serial mode\nINFO  : Subscribed to counters: [] for queryId: hive_20240227003818_85b5ca66-f3f7-4174-ad0a-bcbbbe4f0458\nINFO  : Tez session hasn't been created yet. Opening session\n"
+          },
+          {
+            "type": "TABLE",
+            "data": "maker\tmodel\taverage_price\nskoda\tgalaxy\t3071.800048828125\nrover\tstreetwise\t3187.8466796875\nkia\tretona\t3200.2542898995534\nbmw\ttransit\t3290.159912109375\nchevrolet\talero\t3305.3701171875\nhyundai\tsantamo\t3391.010009765625\nopel\tkadett\t3405.47998046875\nfiat\t128\t3460.39990234375\nnissan\tfrontier\t3478.905029296875\nseat\tinca\t3498.6566569010415\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708989212819_226000208",
+      "id": "paragraph_1708989212819_226000208",
+      "dateCreated": "2024-02-26T23:13:32+0000",
+      "dateStarted": "2024-02-27T00:38:18+0000",
+      "dateFinished": "2024-02-27T00:39:08+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:124335"
+    },
+    {
+      "text": "%hive\nSELECT maker,\n       model,\n       AVG(price_eur) AS average_price\nFROM used_cars\nWHERE manufacture_year BETWEEN 2000 AND 2017\n  AND maker IS NOT NULL\n  AND model IS NOT NULL\n  AND price_eur BETWEEN 3000 AND 20000 -- \nGROUP BY maker, model\nORDER BY average_price DESC \nLIMIT 5; \n",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-27T00:41:06+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "maker": "string",
+                      "model": "string",
+                      "average_price": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "INFO  : Compiling command(queryId=hive_20240227004106_d553d4da-3bdd-480c-8d74-53a00711c382): \nSELECT maker,\n       model,\n       AVG(price_eur) AS average_price\nFROM used_cars\nWHERE manufacture_year BETWEEN 2000 AND 2017\n  AND maker IS NOT NULL\n  AND model IS NOT NULL\n  AND price_eur BETWEEN 3000 AND 20000 \nGROUP BY maker, model\nORDER BY average_price DESC \nLIMIT 5\nINFO  : Concurrency mode is disabled, not creating a lock manager\nINFO  : Semantic Analysis Completed (retrial = false)\nINFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:maker, type:string, comment:null), FieldSchema(name:model, type:string, comment:null), FieldSchema(name:average_price, type:double, comment:null)], properties:null)\nINFO  : Completed compiling command(queryId=hive_20240227004106_d553d4da-3bdd-480c-8d74-53a00711c382); Time taken: 0.132 seconds\nINFO  : Concurrency mode is disabled, not creating a lock manager\nINFO  : Executing command(queryId=hive_20240227004106_d553d4da-3bdd-480c-8d74-53a00711c382): \nSELECT maker,\n       model,\n       AVG(price_eur) AS average_price\nFROM used_cars\nWHERE manufacture_year BETWEEN 2000 AND 2017\n  AND maker IS NOT NULL\n  AND model IS NOT NULL\n  AND price_eur BETWEEN 3000 AND 20000 \nGROUP BY maker, model\nORDER BY average_price DESC \nLIMIT 5\nINFO  : Query ID = hive_20240227004106_d553d4da-3bdd-480c-8d74-53a00711c382\nINFO  : Total jobs = 1\nINFO  : Launching Job 1 out of 1\nINFO  : Starting task [Stage-1:MAPRED] in serial mode\nINFO  : Subscribed to counters: [] for queryId: hive_20240227004106_d553d4da-3bdd-480c-8d74-53a00711c382\nINFO  : Tez session hasn't been created yet. Opening session\n"
+          },
+          {
+            "type": "TABLE",
+            "data": "maker\tmodel\taverage_price\nvolvo\t241\t19980.0\nvolvo\t960\t19306.140625\ntoyota\tgt86\t18807.605759079393\ntoyota\tvenza\t18510.2890625\ninfinity\tm30\t18424.130859375\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708989224905_1690330286",
+      "id": "paragraph_1708989224905_1690330286",
+      "dateCreated": "2024-02-26T23:13:44+0000",
+      "dateStarted": "2024-02-27T00:41:06+0000",
+      "dateFinished": "2024-02-27T00:41:41+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:124336"
+    },
+    {
+      "text": "%hive\nSELECT maker,\n       model,\n       AVG(price_eur) AS average_price\nFROM used_cars\nWHERE manufacture_year BETWEEN 2000 AND 2017\n  AND maker IS NOT NULL\n  AND model IS NOT NULL\n  AND price_eur BETWEEN 300000 AND 2000000\nGROUP BY maker, model\nORDER BY average_price DESC \nLIMIT 5; \n\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-27T00:41:51+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "maker": "string",
+                      "model": "string",
+                      "average_price": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "INFO  : Compiling command(queryId=hive_20240227004151_4e2b2165-2a4e-453b-994d-7ca4ab36467f): \nSELECT maker,\n       model,\n       AVG(price_eur) AS average_price\nFROM used_cars\nWHERE manufacture_year BETWEEN 2000 AND 2017\n  AND maker IS NOT NULL\n  AND model IS NOT NULL\n  AND price_eur BETWEEN 300000 AND 2000000\nGROUP BY maker, model\nORDER BY average_price DESC \nLIMIT 5\nINFO  : Concurrency mode is disabled, not creating a lock manager\nINFO  : Semantic Analysis Completed (retrial = false)\nINFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:maker, type:string, comment:null), FieldSchema(name:model, type:string, comment:null), FieldSchema(name:average_price, type:double, comment:null)], properties:null)\nINFO  : Completed compiling command(queryId=hive_20240227004151_4e2b2165-2a4e-453b-994d-7ca4ab36467f); Time taken: 0.111 seconds\nINFO  : Concurrency mode is disabled, not creating a lock manager\nINFO  : Executing command(queryId=hive_20240227004151_4e2b2165-2a4e-453b-994d-7ca4ab36467f): \nSELECT maker,\n       model,\n       AVG(price_eur) AS average_price\nFROM used_cars\nWHERE manufacture_year BETWEEN 2000 AND 2017\n  AND maker IS NOT NULL\n  AND model IS NOT NULL\n  AND price_eur BETWEEN 300000 AND 2000000\nGROUP BY maker, model\nORDER BY average_price DESC \nLIMIT 5\nINFO  : Query ID = hive_20240227004151_4e2b2165-2a4e-453b-994d-7ca4ab36467f\nINFO  : Total jobs = 1\nINFO  : Launching Job 1 out of 1\nINFO  : Starting task [Stage-1:MAPRED] in serial mode\nINFO  : Subscribed to counters: [] for queryId: hive_20240227004151_4e2b2165-2a4e-453b-994d-7ca4ab36467f\nINFO  : Tez session hasn't been created yet. Opening session\n"
+          },
+          {
+            "type": "TABLE",
+            "data": "maker\tmodel\taverage_price\nvolvo\t\t1695000.0\nkia\t\t1640000.0\nmazda\t323\t1350749.5\nvolkswagen\tgolf\t1179236.375\nfiat\t500\t1125000.0\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708989274327_357537015",
+      "id": "paragraph_1708989274327_357537015",
+      "dateCreated": "2024-02-26T23:14:34+0000",
+      "dateStarted": "2024-02-27T00:41:51+0000",
+      "dateFinished": "2024-02-27T00:42:25+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:124337"
+    },
+    {
+      "text": "%hive\nSELECT maker,\n       model,\n       AVG(price_eur) AS average_price\nFROM used_cars\nWHERE manufacture_year BETWEEN 2000 AND 2017\n  AND maker IS NOT NULL\n  AND model IS NOT NULL\n  AND price_eur BETWEEN 3000 AND 20000 -- Adjusted price range\nGROUP BY maker, model\nORDER BY average_price ASC -- Ordering by average price in ascending order\nLIMIT 5; -- Limiting to the top five make and models\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-27T00:42:33+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "maker": "string",
+                      "model": "string",
+                      "average_price": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "INFO  : Compiling command(queryId=hive_20240227004233_c1def58f-40d8-46b1-b27e-ec80237f93c4): \nSELECT maker,\n       model,\n       AVG(price_eur) AS average_price\nFROM used_cars\nWHERE manufacture_year BETWEEN 2000 AND 2017\n  AND maker IS NOT NULL\n  AND model IS NOT NULL\n  AND price_eur BETWEEN 3000 AND 20000 \nGROUP BY maker, model\nORDER BY average_price ASC \nLIMIT 5\nINFO  : Concurrency mode is disabled, not creating a lock manager\nINFO  : Semantic Analysis Completed (retrial = false)\nINFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:maker, type:string, comment:null), FieldSchema(name:model, type:string, comment:null), FieldSchema(name:average_price, type:double, comment:null)], properties:null)\nINFO  : Completed compiling command(queryId=hive_20240227004233_c1def58f-40d8-46b1-b27e-ec80237f93c4); Time taken: 0.308 seconds\nINFO  : Concurrency mode is disabled, not creating a lock manager\nINFO  : Executing command(queryId=hive_20240227004233_c1def58f-40d8-46b1-b27e-ec80237f93c4): \nSELECT maker,\n       model,\n       AVG(price_eur) AS average_price\nFROM used_cars\nWHERE manufacture_year BETWEEN 2000 AND 2017\n  AND maker IS NOT NULL\n  AND model IS NOT NULL\n  AND price_eur BETWEEN 3000 AND 20000 \nGROUP BY maker, model\nORDER BY average_price ASC \nLIMIT 5\nINFO  : Query ID = hive_20240227004233_c1def58f-40d8-46b1-b27e-ec80237f93c4\nINFO  : Total jobs = 1\nINFO  : Launching Job 1 out of 1\nINFO  : Starting task [Stage-1:MAPRED] in serial mode\nINFO  : Subscribed to counters: [] for queryId: hive_20240227004233_c1def58f-40d8-46b1-b27e-ec80237f93c4\nINFO  : Tez session hasn't been created yet. Opening session\n"
+          },
+          {
+            "type": "TABLE",
+            "data": "maker\tmodel\taverage_price\npeugeot\t806\t3000.0\nskoda\tgalaxy\t3071.800048828125\naudi\tsq5\t3145.820068359375\nrover\tstreetwise\t3187.8466796875\nkia\tretona\t3200.2542898995534\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708989367642_1544605043",
+      "id": "paragraph_1708989367642_1544605043",
+      "dateCreated": "2024-02-26T23:16:07+0000",
+      "dateStarted": "2024-02-27T00:42:33+0000",
+      "dateFinished": "2024-02-27T00:43:08+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:124338"
+    },
+    {
+      "text": "%hive\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-02-26T23:16:45+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1708989405640_200951095",
+      "id": "paragraph_1708989405640_200951095",
+      "dateCreated": "2024-02-26T23:16:45+0000",
+      "status": "READY",
+      "$$hashKey": "object:124339"
+    }
+  ],
+  "name": "Hiva_Assignment1",
+  "id": "2JSZ9PDEK",
+  "defaultInterpreterGroup": "hive",
+  "version": "0.10.1",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/Hiva_Assignment1"
+}
